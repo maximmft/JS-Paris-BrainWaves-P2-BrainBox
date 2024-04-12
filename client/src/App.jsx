@@ -23,6 +23,7 @@ function App() {
     const questionPerPage = 1
     const lastPageQuestion = questionPerPage * currentPage;
     const firstPageQuestion = lastPageQuestion - questionPerPage;
+
     
   
     function displayQuestion (){
