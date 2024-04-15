@@ -1,52 +1,34 @@
 import "./App.css";
-import axios from 'axios';
-import { useState } from "react";
-
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Theme from "./components/theme";
 
 function App() {
-  const [quizzes, setQuizzes] = useState([]);
+  const [themes, setThemes] = useState([]);
 
-  const GetQuizz =() => {
-    
-    axios 
-    .get('https://opentdb.com/api.php?amount=10&difficulty=easy')
-    .then((response) => {
-      setQuizzes(response.data.results)
-    })
-  }
-  const [currentPage, SetCurrentPage] = useState (1)
-  
-  const HandlePageClick = () =>{
-    SetCurrentPage(currentPage+1);
+  const GetThemes = () => {
+    axios.get("https://opentdb.com/api_category.php").then((response) => {
+      setThemes(response.data.trivia_categories);
+    });
   };
 
-    const questionPerPage = 1
-    const lastPageQuestion = questionPerPage * currentPage;
-    const firstPageQuestion = lastPageQuestion - questionPerPage;
+  useEffect(() => {
+    GetThemes();
+  }, []);
 
-    
-  
-    function displayQuestion (){
-      return quizzes.slice(firstPageQuestion,lastPageQuestion)
+  const selectedThemesId = [9, 12, 17, 20, 21, 22, 23, 25];
+  const filteredThemes = themes.filter((theme) =>
+    selectedThemesId.includes(theme.id)
+  );
 
-    }
-
-    const allAnswers = (answerIncorrect, answerCorrect) => {
-      const tab = [...answerIncorrect, answerCorrect];
-      return tab;
-    }
-
+  // stocker dans un tableau
   return (
     <>
-      <button type="button" onClick={GetQuizz}>Get Quizz</button>
-      {/* {quizzes.slice(firstPageQuestion, lastPageQuestion).map((questionObject) => <p key={quizz.question}>{quizz.question}</p>)} */}
-      {displayQuestion().map((quizz) =>  
-      <>
-        <p key={quizz.question}>{quizz.question}</p>
-        {allAnswers(quizz.incorrect_answers, quizz.correct_answer).map((answer) => <button type="button" key={quizz.answer}>{answer}</button>)} 
-      </>)}
-      <div>
-      <button type="button" onClick={HandlePageClick}>Next Question</button>
+      <h1 id="explore">Explore by themes</h1>
+      <div className="theme-cards">
+        {filteredThemes.map((theme) => (
+          <Theme name={theme.name} key={theme.id} />
+        ))}
       </div>
     </>
   );
