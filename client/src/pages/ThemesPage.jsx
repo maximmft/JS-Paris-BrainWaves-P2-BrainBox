@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "../components/theme.css"
-import Theme from "../components/theme";
+import "../components/themes/theme.css"
+import Theme from "../components/themes/theme";
 
 function ThemesPage() {
   const [themes, setThemes] = useState([]);
@@ -25,10 +25,12 @@ function ThemesPage() {
   // stocker dans un tableau
   return (
     <>
+      <h1>Hello Brain Boxer!</h1>
+      <h2> Ready for a quizz?</h2>
       <h1 id="explore">Explore by themes</h1>
       <div className="theme-cards">
         {filteredThemes.map((theme) => (
-          <Theme name={theme.name} key={theme.id} />
+          <Theme name={theme.name} id={theme.id} key={theme.id} />
         ))}
       </div>
       <Outlet/>

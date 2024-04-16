@@ -1,8 +1,8 @@
-function DifficultiesPage () {
-    
-    return (
-        <h1>difficulties</h1>
-    )
+import Difficulties from "../components/difficulties/difficulties";
+
+function DifficultiesPage() {
+  // useparams pour l'id
+  return <Difficulties />;
 }
 
-export default DifficultiesPage
+export default DifficultiesPage;
