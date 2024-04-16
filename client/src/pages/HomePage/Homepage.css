@@ -20,3 +20,9 @@
   background: #f0f0f0;
   cursor: pointer;
 }
+
+@media screen and (max-width: 824px) {
+  .register-upsell[data-v-5256245d] {
+    padding: 5px 5px 8px;
+  }
+}
