@@ -25,8 +25,9 @@ function ThemeCard({ name }) {
   );
 }
 
+
+export default ThemeCard;
+
 ThemeCard.propTypes = {
   name: PropTypes.string.isRequired,
 };
-
-export default ThemeCard;
