@@ -1,0 +1,39 @@
+.nature-background {
+  background-color: #588461;
+  color: white;
+}
+
+.history-background {
+  background-color: #9d3946;
+  color: white;
+}
+
+.sports-background {
+  background-color: #c99c54;
+  color: white;
+}
+
+.geography-background {
+  background-color: #3e81b9;
+  color: white;
+}
+
+.art-background {
+  background-color: #9d60b1;
+  color: white;
+}
+
+.music-background {
+  background-color: #c2368a;
+  color: white;
+}
+
+.all-background {
+  background: linear-gradient(#e7a4ff, #ffbedd, #ffe5bc, #a9d3b2);
+  color: #5b5b5b;
+}
+
+.mythology-background {
+  background: linear-gradient(#fe9f9f, #e9b4fc);
+  color: #85265f;
+}
