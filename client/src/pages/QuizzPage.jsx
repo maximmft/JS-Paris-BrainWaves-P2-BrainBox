@@ -1,8 +1,8 @@
-function QuizzPage () {
-    
-    return (
-        <h1>Quizz</h1>
-    )
+import GameInterface from "../components/GaminInterface/GameInterface";
+import background from "../assets/background/bakcground.png";
+
+function QuizzPage() {
+  return <GameInterface background={background} />;
 }
 
-export default QuizzPage
+export default QuizzPage;
