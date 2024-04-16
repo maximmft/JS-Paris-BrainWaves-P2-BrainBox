@@ -3,11 +3,11 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
-  color: #eee;
+  height: auto;
   margin: 0;
 }
 
-.container {
+/* .container {
   height: 100vh;
   background-image: url("./assets/images/background.webp");
   background-size: cover;
@@ -162,4 +162,4 @@ footer {
       0 0 98px #ff0000;
     color: #fff;
   }
-}
+} */
