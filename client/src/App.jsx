@@ -1,12 +1,8 @@
-import GameInterface from "./components/GaminInterface/GameInterface";
-import background from './assets/background/bakcground.png'
-import './App.css'
+import { Outlet } from "react-router-dom";
+import "./App.css";
 
 function App() {
-return (
-  <GameInterface background={background} />
-)
-  
+  return <Outlet />;
 }
 
 export default App;

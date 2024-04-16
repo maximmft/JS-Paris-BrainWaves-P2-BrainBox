@@ -35,6 +35,9 @@ body {
   border-radius: 10%;
   margin-top: 2rem;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .answers {
