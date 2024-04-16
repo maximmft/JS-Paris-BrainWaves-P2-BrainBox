@@ -1,8 +1,9 @@
+// import { useParams } from "react-router-dom";
 import Difficulties from "../components/difficulties/difficulties";
 
 function DifficultiesPage() {
-  // useparams pour l'id
-  return <Difficulties />;
+  // const {id} = useParams()
+  return <Difficulties/>;
 }
 
 export default DifficultiesPage;

@@ -3,7 +3,6 @@ import "../colors/colors.css";
 import Background from "../../assets/background/background.png";
 
 function Difficulties() {
-
   // const categoryByID = [
   //  { all: 9,
   //   music: 12,
@@ -17,8 +16,10 @@ function Difficulties() {
   // ]
 
   return (
-    <section className="difficultiesSection"
-    style={{backgroundImage: `url(${Background})`}}>
+    <section
+      className="difficultiesSection"
+      style={{ backgroundImage: `url(${Background})` }}
+    >
       <h1>Choose your difficulty</h1>
       <div className="buttons">
         <button type="button">Easy</button>
@@ -27,8 +28,12 @@ function Difficulties() {
         <button type="button">All difficulties</button>
       </div>
     </section>
-    
   );
 }
+
+// put id in props
+// Difficulties.propTypes = {
+//   id: PropTypes.string.isRequired,
+// };
 
 export default Difficulties;
