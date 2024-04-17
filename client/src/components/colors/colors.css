@@ -4,7 +4,7 @@
 }
 
 .history-background {
-  background-color: #9d3946;
+  background-color: #d1374c;
   color: white;
 }
 
@@ -29,11 +29,11 @@
 }
 
 .all-background {
-  background: linear-gradient(#e7a4ff, #ffbedd, #ffe5bc, #a9d3b2);
-  color: #5b5b5b;
+  background: linear-gradient(#d194e7, #f581b9, #f4c984, #7fd091);
+  color: white;
 }
 
 .mythology-background {
-  background: linear-gradient(#fe9f9f, #e9b4fc);
-  color: #85265f;
+  background: linear-gradient(#e67474, #d476f6);
+  color: white;
 }

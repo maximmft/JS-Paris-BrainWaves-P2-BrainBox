@@ -11,6 +11,11 @@ body {
   align-items: center;
 }
 
+.difficultiesSection h1 {
+  margin: 6rem 0rem 2rem 0rem;
+  font-size: 2rem;
+}
+
 .buttons {
   display: flex;
   flex-wrap: wrap;

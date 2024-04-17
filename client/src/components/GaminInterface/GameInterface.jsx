@@ -17,14 +17,14 @@ function GameInterface({ background, id, difficulty }) {
   useEffect(() => {
     getQuizz();
   }, []);
-
+  
   return (
     <section className="grid">
       <div
         className="background"
         style={{ backgroundImage: `url(${background})` }}
       >
-        <Header />
+        <Header id={id}/>
         <div className="card-container">
           <CardQuestion quizzes={quizzes} />
         </div>
