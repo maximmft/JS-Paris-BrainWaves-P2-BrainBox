@@ -8,6 +8,7 @@
   color: white;
   font-family: Itim;
   font-size: larger;
+  box-shadow: 0px 4px 5px 1px rgba(157, 157, 157, 0.85);
 }
 
 .home-btn {

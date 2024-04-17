@@ -17,11 +17,13 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "/themespage", element: <ThemesPage /> },
       { path: "/difficultiespage/:id", element: <DifficultiesPage /> },
-      { path: "/quizzpage", element: <QuizzPage /> },
+      { path: "/difficultiespage/:id/:difficulty", element: <QuizzPage /> },
       { path: "/scorespage", element: <ScoresPage /> },
     ],
   },
 ]);
+
+// /difficultiespage/:id/:difficulty
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

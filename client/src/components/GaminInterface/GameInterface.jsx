@@ -5,15 +5,15 @@ import PropTypes from "prop-types";
 import CardQuestion from "../card-question/CardQuestion";
 import Header from "../Header/Header";
 
-function GameInterface({ background }) {
+function GameInterface({ background, id, difficulty }) {
   const [quizzes, setQuizzes] = useState([]);
 
   const getQuizz = () => {
-    axios.get("https://opentdb.com/api.php?amount=10").then((response) => {
+    axios.get(`https://opentdb.com/api.php?amount=10&category=${id}&difficulty=${difficulty}`).then((response) => {
       setQuizzes(response.data.results);
     });
   };
-
+  
   useEffect(() => {
     getQuizz();
   }, []);
@@ -35,6 +35,8 @@ function GameInterface({ background }) {
 
 GameInterface.propTypes = {
   background: PropTypes.string.isRequired,
+  difficulty: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default GameInterface;

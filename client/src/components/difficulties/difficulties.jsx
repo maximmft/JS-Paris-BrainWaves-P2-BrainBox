@@ -1,34 +1,51 @@
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./difficulties.css";
 import "../colors/colors.css";
 import Background from "../../assets/background/background.png";
 
-function Difficulties() {
+function Difficulties({ id }) {
 
-  // const categoryByID = [
-  //  { all: 9,
-  //   music: 12,
-  //   nature: 17,
-  //   mythology: 20,
-  //   sport: 21,
-  //   geography: 22,
-  //   history: 23,
-  //   art: 25,
-  //   }
-  // ]
+  let buttonClass = "";
+  if (id === "9") {
+    buttonClass = "all-background";
+  } else if (id === "12") {
+    buttonClass = "music-background";
+  } else if (id === "17") {
+    buttonClass = "nature-background";
+  } else if (id === "20") {
+    buttonClass = "mythology-background";
+  } else if (id === "21") {
+    buttonClass = "sports-background";
+  } else if (id === "22") {
+    buttonClass = "geography-background";
+  } else if (id === "23") {
+    buttonClass = "history-background";
+  } else {
+    buttonClass = "art-background";
+  }
+
+  const navigate = useNavigate()
 
   return (
-    <section className="difficultiesSection"
-    style={{backgroundImage: `url(${Background})`}}>
+    <section
+      className="difficultiesSection"
+      style={{ backgroundImage: `url(${Background})` }}
+    >
       <h1>Choose your difficulty</h1>
       <div className="buttons">
-        <button type="button">Easy</button>
-        <button type="button">Medium</button>
-        <button type="button">Hard</button>
-        <button type="button">All difficulties</button>
+        <button type="button" className={buttonClass} onClick ={()=> navigate(`/difficultiespage/${id}/easy`)}>
+          Easy
+        </button>
+        <button type="button" className={buttonClass} onClick ={()=> navigate(`/difficultiespage/${id}/medium`)}>Medium</button>
+        <button type="button" className={buttonClass} onClick ={()=> navigate(`/difficultiespage/${id}/hard`)}>Hard</button>
       </div>
     </section>
-    
   );
+}
+
+Difficulties.propTypes = {
+  id: PropTypes.number.isRequired,
 }
 
 export default Difficulties;
