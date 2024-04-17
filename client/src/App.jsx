@@ -1,16 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-
+import React from "react";
+import { Outlet } from "react-router-dom";
+import "./App.css";
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<EntryPage />} />
-        <Route path="/home" element={<HomePage />} />
-      </Routes>
-    </Router>
+    <div>
+      {/* Free to add headers, footers or other components here */}
+      <Outlet /> // This renders the matched child route component
+    </div>
   );
 };
 
 export default App;
-

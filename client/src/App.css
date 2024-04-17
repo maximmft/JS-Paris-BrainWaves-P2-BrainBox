@@ -1,167 +1,101 @@
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #eee;
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Solway:wght@300;400;500;700;800&display=swap");
+
+#root
+/* App home-page style */
+body, html {
   margin: 0;
-}
-/*.hide {
-  display: none;
-}*/
-.container {
-  height: 100vh;
-  background-image: url("./assets/images/background.webp");
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 30px;
+  padding: 0;
+  font-family: "Itim", sans-serif;
 }
 
+/* Background Images */
+.background-entry {
+  background-image: url("./assets/images/background-entrypage.png");
+  background-size: cover; /* Or whatever fits your design */
+}
+.background-last {
+  background-image: url("./assets/images/background-lastpage.png");
+  background-size: cover; /* Or whatever fits your design */
+}
+
+/* Logo */
 .logo {
-  font-size: 20px;
-  margin-top: 16px;
+  background-image: url("./assets/images/brainbox-logo.png");
+  width: 200px; /* Adjust based on your design */
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.navbar ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
+/* Icons */
+.icon-sports {
+  background-image: url("./assets/images/Sports.png");
+  /* Additional styling */
 }
 
-.navbar a {
-  text-decoration: none;
-  color: #eee;
-  display: flex;
-  gap: 5px;
-  justify-content: end;
-  margin-top: auto;
-  font-size: 15px;
+.icon-parchment {
+  background-image: url("./assets/images/Parchment.png");
+  /* Additional styling */
 }
 
-.navbar a:hover {
-  scale: 110%;
+.icon-palette {
+  background-image: url("./assets/images/Paint Palette With Brush.png");
+  /* Additional styling */
 }
 
-.text-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.icon-tree {
+  background-image: url("./assets/images/Oak Tree.png");
+  /* Additional styling */
 }
 
-.block-primary {
-  text-transform: uppercase;
-  margin-bottom: 30px;
+.icon-microphone {
+  background-image: url("./assets/images/Micro.png");
+  /* Additional styling */
 }
 
-.block-primary-main {
-  font-size: 50px;
-  font-weight: 400;
-  letter-spacing: 5px;
-  animation: blink 12s infinite;
+.icon-medusa {
+  background-image: url("./assets/images/Medusa.png");
+  /* Additional styling */
 }
 
-.block-primary-sub {
-  display: block;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 7px;
+/* Additional styles for other elements and states */
+
+/*@media screen and (min-width: 376px) {
+  .home-proceed-game[data-v-60b4cf5f] {
+      justify-content:center;
+      align-items: center;
+      height: 200px;
+      display: flex;
+  }} /block filtre categories
+  
+  .home-container[data-v-60b4cf5f] {
+        background:initial
+    }
+
+ @media screen and (max-width: 1440px) 
+    .home-container[data-v-60b4cf5f] {
+        padding-top:52px
+    } / hold body
+
+    @keyframes wiggle-satchel-60b4cf5f {
+    5% {
+        transform: rotate(15deg)
+    }
+
+    10% {
+        transform: rotate(-10deg)
+    }
+
+    15% {
+        transform: rotate(5deg)
+    }
+
+    20% {
+        transform: rotate(-5deg)
+    }
+
+    25% {
+        transform: rotate(0)
+    }
 }
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 10px 20px;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all 0.2s;
-  position: relative;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn-white {
-  background-color: #fff;
-  color: #777;
-  font-size: 14px;
-}
-
-footer {
-  position: absolute;
-  top: 85%;
-  left: 75%;
-}
-
-.wcs {
-  text-decoration: none;
-  color: #ff1493ad;
-}
-
-.wcs:hover {
-  border-bottom: solid 1px #ff1493ad;
-}
-
-@media screen and (max-width: 760px) {
-  .logo {
-    display: none;
-  }
-
-  .container {
-    justify-content: center;
-  }
-
-  footer {
-    position: absolute;
-    top: 85%;
-    left: 20%;
-  }
-}
-
-@media screen and (min-width: 761px) and (max-width: 960px) {
-  footer {
-    position: absolute;
-    top: 85%;
-    left: 60%;
-  }
-}
-
-@keyframes blink {
-  20%,
-  24%,
-  55% {
-    color: #111;
-    text-shadow: none;
-  }
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    text-shadow:
-      0 0 5px #ff1493ad,
-      0 0 15px #eee,
-      0 0 20px #ff1493ad,
-      0 0 40px #a00ac9,
-      0 0 60px #ff0000,
-      0 0 10px #970dc5,
-      0 0 98px #ff0000;
-    color: #fff;
-  }
-}
+/* ... */
