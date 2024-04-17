@@ -16,7 +16,7 @@ function Theme({ name, id }) {
 
 Theme.propTypes = {
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default Theme;
