@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./HomePage.css";
+import "./Homepage.css";
 import background from "../../assets/images/background-entrypage.png";
 import logo from "../../assets/images/brainbox-logo.png";
 
