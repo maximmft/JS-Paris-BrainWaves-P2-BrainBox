@@ -41,7 +41,7 @@
 .start-button {
   font-family: "Itim", cursive;
   padding: 1vw 1vw;
-  font-size: 7vw;
+  font-size: 10vw;
   cursor: pointer;
   background-color: rgb(215, 123, 87);
   color: white; /* Text color for visibility */
@@ -52,11 +52,11 @@
 
 @media (max-width: 769px) {
   .itim-style {
-    font-size: 6vw; /* Adjust font size for larger screens */
+    font-size: 8vw; /* Adjust font size for larger screens */
   }
 
   .logo {
-    width: 50%; /* Adjust width for tablets */
+    width: 70%; /* Adjust width for tablets */
   }
 }
 
