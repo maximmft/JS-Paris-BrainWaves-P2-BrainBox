@@ -60,42 +60,44 @@ body, html {
 
 /* Additional styles for other elements and states */
 
-/*@media screen and (min-width: 376px) {
-  .home-proceed-game[data-v-60b4cf5f] {
-      justify-content:center;
-      align-items: center;
-      height: 200px;
-      display: flex;
-  }} /block filtre categories
-  
-  .home-container[data-v-60b4cf5f] {
-        background:initial
-    }
+@media screen and (min-width: 376px) {
+  .home-page {
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    display: flex;
+  }
+}
+block filtre categories .background {
+  background: initial;
+}
 
- @media screen and (max-width: 1440px) 
-    .home-container[data-v-60b4cf5f] {
-        padding-top:52px
-    } / hold body
+@media screen and (max-width: 1440px) {
+  .home-page {
+    padding-top: 52px;
+  }
+}
 
-    @keyframes wiggle-satchel-60b4cf5f {
-    5% {
-        transform: rotate(15deg)
-    }
+/*
+@keyframes wiggle-satchel-60b4cf5f {
+  5% {
+    transform: rotate(15deg);
+  }
 
-    10% {
-        transform: rotate(-10deg)
-    }
+  10% {
+    transform: rotate(-10deg);
+  }
 
-    15% {
-        transform: rotate(5deg)
-    }
+  15% {
+    transform: rotate(5deg);
+  }
 
-    20% {
-        transform: rotate(-5deg)
-    }
+  20% {
+    transform: rotate(-5deg);
+  }
 
-    25% {
-        transform: rotate(0)
-    }
+  25% {
+    transform: rotate(0);
+  }
 }
 /* ... */

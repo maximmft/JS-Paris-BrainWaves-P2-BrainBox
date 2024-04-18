@@ -18,34 +18,54 @@
   justify-content: center;
   background-size: cover;
   background-position: center;
+  margin: 0;
+  padding: 0;
 }
 
 .itim-style {
   font-family: "Itim", cursive;
-  font-size: 8vw; /* Responsive font size */
+  font-size: 10vw; /* Responsive font size */
   color: #333;
   text-align: center; /* Centers text horizontally */
   text-wrap: wrap;
-  margin: 30px; /* Adds space above and below the text */
-  margin-top: 10px;
+  margin: 0px 3px; /* Adds space above and below the text */
 }
 
 .logo {
-  width: 70%; /*Responsive width */
-  max-width: 1200px; /* Maximum width to maintain aspect ratio */
+  width: 70%;
   height: auto;
-  margin: 2% 0; /* Responsive vertical spacing */
+  margin: 3% 0; /* Responsive vertical spacing */
   margin-top: 10%;
 }
 
 .start-button {
   font-family: "Itim", cursive;
-  padding: 2vw 2vw;
-  font-size: 8vw;
+  padding: 1vw 1vw;
+  font-size: 7vw;
   cursor: pointer;
   background-color: rgb(215, 123, 87);
   color: white; /* Text color for visibility */
   border: none;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 8px; /* Rounded corners */
   margin-top: 1%; /* Spacing above the button */
+}
+
+@media (max-width: 769px) {
+  .itim-style {
+    font-size: 6vw; /* Adjust font size for larger screens */
+  }
+
+  .logo {
+    width: 50%; /* Adjust width for tablets */
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1280px) {
+  .itim-style {
+    font-size: 7vw; /* Smaller font size for large screens */
+  }
+
+  .logo {
+    width: 70%; /* Smaller logo for large screens */
+  }
 }

@@ -5,7 +5,6 @@ import App from "./App";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import Themes from "./pages/ThemesPage/Themes.jsx";
 
-
 // Define components imports similary
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

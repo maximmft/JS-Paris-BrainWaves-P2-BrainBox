@@ -1,48 +1,39 @@
-#root .themes-page {
+/* Container for all theme cards */
+.theme-cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(150px, 1fr)
+  ); /* Adjust the minmax values based on your design */
+  gap: 20px; /* Space between cards */
   padding: 20px;
+  justify-content: center;
 }
 
-.search-bar {
-  margin-bottom: 20px;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.category-list {
+/* Individual theme card styling */
+.theme-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc; /* Example border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* Card background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  cursor: pointer; /* Hand cursor on hover */
+  transition: transform 0.2s; /* Smooth transform on hover */
 }
 
-.category-item {
-  padding: 10px;
-  background: #f0f0f0;
-  cursor: pointer;
-  flex: 1 1 200px; /* Each item can grow and shrink but base at 200px */
+.theme-card:hover {
+  transform: scale(1.05); /* Slightly enlarge card on hover */
 }
 
 /* Responsive adjustments */
-@media (max-width: 1280px) {
-  #root .home-page {
-    padding: 10px;
-  }
-
-  .category-item {
-    flex: 1 1 100%; /* Full width on small screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .search-bar {
-    padding: 5px;
-  }
-
-  .category-list {
-    gap: 5px;
-  }
-
-  .category-item {
-    padding: 5px;
+@media (max-width: 600px) {
+  .theme-cards {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(120px, 1fr)
+    ); /* Adjust for smaller screens */
   }
 }
