@@ -1,6 +1,6 @@
 import Score from "../components/score/Score"
 
-function ScoresPage ({ correctAnswers, totalAnswers}) {
+function ScoresPage () {
     
     return ( <Score correctAnswers={0} totalAnswers={10}/> )
 }
