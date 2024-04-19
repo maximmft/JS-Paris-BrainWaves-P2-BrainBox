@@ -12,12 +12,10 @@ body {
   width: 18rem;
 }
 
-
 .round-time-bar div {
   width: 100%;
   height: 5px;
-  animation: roundtime calc(10s) steps(var(10))
-    forwards;
+  animation: roundtime calc(10s) steps(var(10)) forwards;
   transform-origin: left center;
   background: blue;
 }
@@ -31,7 +29,6 @@ body {
     width: 0;
   }
 }
-
 
 .card-question {
   margin: 2rem 0rem 0rem 0rem;
