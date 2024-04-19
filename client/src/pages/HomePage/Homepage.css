@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Solway:wght@300;400;500;700;800&display=swap");
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden; /* Prevents overflow from child elements */
+  font-family: "Itim", cursive;
+}
+
+.home-page {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+.font-style {
+  font-family: solway;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: black;
+  text-align: center;
+  margin: 0px 3px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.start-button {
+  font-family: "Itim", cursive;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  background: linear-gradient(rgb(251 133 87), rgb(210 115 77));
+  color: white;
+  border-radius: 2rem;
+  margin-top: 4rem;
+  box-shadow: 0px 4px 5px 1px rgba(157, 157, 157, 0.85);
+}
+
+@media (min-width: 900px) {
+  .font-style {
+    font-size: 3rem;
+    font-family: solway;
+    font-weight: 600;
+  }
+
+  .logo {
+    width: 40%;
+  }
+}
