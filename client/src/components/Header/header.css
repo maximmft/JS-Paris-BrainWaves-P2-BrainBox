@@ -20,6 +20,20 @@ header h1 {
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
-  top: 2%;
+  top: 8px;
   right: 10px;
+}
+
+@media (min-width: 500px) {
+  header h1 {
+    font-size: 4rem;
+  }
+
+  .home-btn {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
 }
