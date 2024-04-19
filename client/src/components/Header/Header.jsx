@@ -10,10 +10,22 @@ function Header({id}) {
   if (id === "9") {
     buttonClass = "all-background";
     nameQuizzes = "General Knowledge";
-  } else if (id === "12") {
+  } else if (id === "11") {
+    buttonClass = "film";
+    nameQuizzes = "Film";
+  } else if (id === "15") {
+    buttonClass = "video-games";
+    nameQuizzes = "Video Games";
+  }else if (id === "31") {
+    buttonClass = "manga";
+    nameQuizzes = "Japanese Anime & Manga";
+  }else if (id === "27") {
+    buttonClass = "animals";
+    nameQuizzes = "Animals";
+  }else if (id === "12") {
     buttonClass = "music-background";
     nameQuizzes = "Entertainment: Music";
-  } else if (id === "17") {
+  }else if (id === "17") {
     buttonClass = "nature-background";
     nameQuizzes = "Science & Nature";
   } else if (id === "20") {

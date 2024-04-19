@@ -1,0 +1,24 @@
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.searchBar input {
+  height: 2.5rem;
+  width: 70%;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 4px 5px 1px #e2e2e2;
+}
+
+#searchBarInput {
+  font-family: itim;
+  padding-left: 1rem;
+}
+
+::placeholder {
+  color: #00798c;
+  font-family: itim;
+  font-size: medium;
+}

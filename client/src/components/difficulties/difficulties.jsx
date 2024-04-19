@@ -11,6 +11,14 @@ function Difficulties({ id }) {
     buttonClass = "all-background";
   } else if (id === "12") {
     buttonClass = "music-background";
+  } else if (id === "15") {
+    buttonClass = "video-games-background";
+  }else if (id === "31") {
+    buttonClass = "manga-background";
+  }else if (id === "11") {
+    buttonClass = "film-background";
+  }else if (id === "27") {
+    buttonClass = "animals-background";
   } else if (id === "17") {
     buttonClass = "nature-background";
   } else if (id === "20") {
