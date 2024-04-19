@@ -1,28 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./CardQuestion.css";
 import PropTypes from "prop-types";
 import Geography from "../../assets/icons/geography.png";
+import Timer from "./Timer";
 
 function CardQuestion({ quizzes }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [time, setTime] = useState(10);
+  const [ anim , setAnim ] = useState("animated");
 
+  
   const handlePageClick = () => {
     setTime(10);
+    setAnim("animated")
     setCurrentPage(currentPage + 1);
   };
-
-  useEffect(() => {
-    if (time !== 0) {
-      const interval = setInterval(() => {
-        setTime((prev) => prev - 1);
-      }, 1000);
-
-      return () => clearInterval(interval);
-    }
-
-    return () => {};
-  });
 
   const questionPerPage = 1;
   const lastPageQuestion = questionPerPage * currentPage;
@@ -40,15 +32,7 @@ function CardQuestion({ quizzes }) {
 
   return (
     <section className="all-card">
-      <h3>{time !== 0 ? time : "Times up !"}</h3>
-
-      <div
-        className="round-time-bar"
-        data-style="smooth"
-        style={{ duration: 5 }}
-      >
-        <div />
-      </div>
+      <Timer time={time} setTime={setTime} class={anim} setAnim={setAnim} anim={anim}/>
       {time !== 0 &&
         displayQuestion().map((quizz) => (
           <>

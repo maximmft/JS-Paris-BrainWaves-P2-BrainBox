@@ -20,7 +20,7 @@ body {
   background: blue;
 }
 
-.round-time-bar div {
+.animated {
   animation: roundtime calc(10s) linear forwards;
 }
 
