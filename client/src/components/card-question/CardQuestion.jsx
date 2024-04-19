@@ -18,11 +18,22 @@ function CardQuestion({ quizzes }) {
     return quizzes.slice(firstQuestionPage, lastPageQuestion);
   }
 
-  const allAnswers = (responseInCorrect, responseCorrect) => {
-    const tab = [...responseInCorrect, responseCorrect];
+  const [clickAnswser, setClickAnswer] = useState("");
 
-    return tab;
-  };
+  function checkAnswer(correctAnswer, answer, incorrectAnswers) {
+    if (clickAnswser === answer && correctAnswer === clickAnswser)
+      return "answers-green";
+    if (clickAnswser === answer && incorrectAnswers.includes(clickAnswser))
+      return "answers-red";
+
+    return null;
+  }
+
+  const [questionCount, setQuestionCount] = useState(1);
+
+  function questionCounter() {
+    if (questionCount <= 9) setQuestionCount(questionCount + 1);
+  }
 
   return (
     <section className="all-card">
@@ -32,22 +43,35 @@ function CardQuestion({ quizzes }) {
             <div className="icons">
               <img className="icon" src={Geography} alt="" />
             </div>
+            <hr />
             <p key={quizzes.question} className="question">
               {quizz.question}
             </p>
+            <hr />
           </div>
           <section className="btn-answers">
-            {allAnswers(quizz.incorrect_answers, quizz.correct_answer).map(
-              (answer) => (
-                <button key={answer} className="answers" type="button">
-                  {answer}
-                </button>
-              )
-            )}
+            {quizz.answers.map((answer) => (
+              <button
+                onClick={() => setClickAnswer(answer)}
+                key={answer}
+                className={`answers ${checkAnswer(quizz.correct_answer, answer, quizz.incorrect_answers)}`}
+                type="button"
+              >
+                {answer}
+              </button>
+            ))}
           </section>
         </>
       ))}
-      <button type="button" onClick={handlePageClick} className="next">
+      <p>Question {questionCount}/10</p>
+      <button
+        type="button"
+        onClick={() => {
+          handlePageClick();
+          questionCounter();
+        }}
+        className="next-btn"
+      >
         Next Question
       </button>
     </section>

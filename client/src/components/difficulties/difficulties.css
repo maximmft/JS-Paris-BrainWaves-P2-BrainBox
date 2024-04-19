@@ -17,7 +17,7 @@ body {
   justify-content: center;
 }
 
-button {
+.difficulty-btn {
   padding: 2rem;
   width: 18rem;
   height: 4.5rem;

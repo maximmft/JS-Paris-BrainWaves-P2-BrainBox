@@ -7,10 +7,18 @@ import Header from "../Header/Header";
 
 function GameInterface({ background }) {
   const [quizzes, setQuizzes] = useState([]);
-
   const getQuizz = () => {
     axios.get("https://opentdb.com/api.php?amount=10").then((response) => {
-      setQuizzes(response.data.results);
+      const results = [];
+      response.data.results.forEach((question) => {
+        const answers = [
+          ...question.incorrect_answers,
+          question.correct_answer,
+        ];
+        answers.sort(() => 0.5 - Math.random());
+        results.push({ answers, ...question });
+      });
+      setQuizzes(results);
     });
   };
 

@@ -2,18 +2,24 @@
 
 .header {
   background-color: #3e81b9;
+  height: 4rem;
   text-align: center;
   display: flex;
   justify-content: center;
-  color: white;
-  font-family: Itim;
-  font-size: larger;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
 }
 
 .home-btn {
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
-  top: 28px;
+  top: 10px;
   right: 10px;
+}
+
+.header h1 {
+  color: white;
+  font-family: Itim;
+  font-size: 2rem;
+  margin: 0;
 }
