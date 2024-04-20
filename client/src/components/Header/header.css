@@ -26,12 +26,12 @@ header h1 {
 
 @media (min-width: 500px) {
   header h1 {
-    font-size: 4rem;
+    font-size: 2rem;
   }
 
   .home-btn {
-    width: 5rem;
-    height: 5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     position: absolute;
     top: 5px;
     right: 10px;

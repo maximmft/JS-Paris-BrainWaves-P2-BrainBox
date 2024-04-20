@@ -25,8 +25,8 @@
 
 @media (min-width: 500px) {
   .searchBar input {
-    height: 4rem;
-    width: 70%;
+    height: 3rem;
+    width: 50%;
   }
 
   ::placeholder {

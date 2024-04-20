@@ -16,6 +16,11 @@ function ThemesPage() {
     });
   };
 
+
+  useEffect(() => {
+    setTabFilterTheme(themes);
+  }, [themes]);
+
   useEffect(() => {
     GetThemes();
   }, []);
