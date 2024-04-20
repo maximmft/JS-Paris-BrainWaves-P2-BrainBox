@@ -170,6 +170,12 @@ body {
 
   .theme-card {
     grid-column-start: span 1;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .theme-card:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
   }
 
   img {

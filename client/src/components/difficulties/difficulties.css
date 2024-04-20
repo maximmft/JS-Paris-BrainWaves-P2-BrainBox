@@ -52,7 +52,13 @@ button {
     margin: 2rem;
     font-size: 1.5rem;
     color: white;
-    border-radius: 2.5rem;
+    border-radius: 2rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
   }
 
   .difficultiesSection h1 {
