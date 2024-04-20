@@ -30,7 +30,6 @@
 
 .start-button {
   font-family: "Itim", cursive;
-  padding: 1rem;
   font-size: 2rem;
   cursor: pointer;
   background: linear-gradient(rgb(251 133 87), rgb(210 115 77));
@@ -48,6 +47,11 @@
   }
 
   .logo {
-    width: 40%;
+    width: 30%;
+  }
+
+  .start-button:hover {
+    transform: scale(1.1);
+    transition: 0.6s ease-in-out;
   }
 }
