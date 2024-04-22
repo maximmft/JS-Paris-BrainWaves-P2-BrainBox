@@ -5,7 +5,6 @@ import "../colors/colors.css";
 import Background from "../../assets/background/background.png";
 
 function Difficulties({ id }) {
-
   let buttonClass = "";
   if (id === "9") {
     buttonClass = "all-background";
@@ -13,11 +12,11 @@ function Difficulties({ id }) {
     buttonClass = "music-background";
   } else if (id === "15") {
     buttonClass = "video-games-background";
-  }else if (id === "31") {
+  } else if (id === "31") {
     buttonClass = "manga-background";
-  }else if (id === "11") {
+  } else if (id === "11") {
     buttonClass = "film-background";
-  }else if (id === "27") {
+  } else if (id === "27") {
     buttonClass = "animals-background";
   } else if (id === "17") {
     buttonClass = "nature-background";
@@ -33,7 +32,7 @@ function Difficulties({ id }) {
     buttonClass = "art-background";
   }
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <section
@@ -42,11 +41,27 @@ function Difficulties({ id }) {
     >
       <h1>Choose your difficulty</h1>
       <div className="buttons">
-        <button type="button" className={buttonClass} onClick ={()=> navigate(`/difficultiespage/${id}/easy`)}>
+        <button
+          type="button"
+          className={buttonClass}
+          onClick={() => navigate(`/difficultiespage/${id}/easy`)}
+        >
           Easy
         </button>
-        <button type="button" className={buttonClass} onClick ={()=> navigate(`/difficultiespage/${id}/medium`)}>Medium</button>
-        <button type="button" className={buttonClass} onClick ={()=> navigate(`/difficultiespage/${id}/hard`)}>Hard</button>
+        <button
+          type="button"
+          className={buttonClass}
+          onClick={() => navigate(`/difficultiespage/${id}/medium`)}
+        >
+          Medium
+        </button>
+        <button
+          type="button"
+          className={buttonClass}
+          onClick={() => navigate(`/difficultiespage/${id}/hard`)}
+        >
+          Hard
+        </button>
       </div>
     </section>
   );
@@ -54,6 +69,6 @@ function Difficulties({ id }) {
 
 Difficulties.propTypes = {
   id: PropTypes.number.isRequired,
-}
+};
 
 export default Difficulties;

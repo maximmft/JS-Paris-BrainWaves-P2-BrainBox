@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import "./header.css";
 import Home from "../../assets/icons/home white.png";
 import "../colors/colors.css";
 
-function Header({id}) {
-
+function Header({ id }) {
   let nameQuizzes = "";
   let buttonClass = "";
   if (id === "9") {
@@ -16,16 +16,16 @@ function Header({id}) {
   } else if (id === "15") {
     buttonClass = "video-games";
     nameQuizzes = "Video Games";
-  }else if (id === "31") {
+  } else if (id === "31") {
     buttonClass = "manga";
     nameQuizzes = "Japanese Anime & Manga";
-  }else if (id === "27") {
+  } else if (id === "27") {
     buttonClass = "animals";
     nameQuizzes = "Animals";
-  }else if (id === "12") {
+  } else if (id === "12") {
     buttonClass = "music-background";
     nameQuizzes = "Entertainment: Music";
-  }else if (id === "17") {
+  } else if (id === "17") {
     buttonClass = "nature-background";
     nameQuizzes = "Science & Nature";
   } else if (id === "20") {
@@ -44,12 +44,19 @@ function Header({id}) {
     buttonClass = "art-background";
     nameQuizzes = "Art";
   }
-
+  const navigate = useNavigate();
   return (
     <header className={buttonClass}>
       <h1>{nameQuizzes}</h1>
       <div className="btn">
-        <img className="home-btn" src={Home} alt="" />
+        <img
+          className="home-btn"
+          src={Home}
+          alt=""
+          onClick={() => navigate(`/themespage`)}
+          onKeyDown={() => navigate(`/themespage`)}
+          role="presentation"
+        />
       </div>
     </header>
   );
@@ -59,4 +66,4 @@ export default Header;
 
 Header.propTypes = {
   id: PropTypes.number.isRequired,
-}
+};

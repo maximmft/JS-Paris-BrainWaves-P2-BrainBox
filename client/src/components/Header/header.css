@@ -25,15 +25,18 @@ header h1 {
 }
 
 @media (min-width: 500px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
   .home-btn {
     width: 2.5rem;
     height: 2.5rem;
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 10px;
+  }
+
+  .header h1 {
+    color: white;
+    font-family: Itim;
+    font-size: 2rem;
+    margin: 0;
   }
 }

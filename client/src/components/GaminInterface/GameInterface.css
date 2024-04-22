@@ -26,5 +26,6 @@
 
 .card-question .icons .icon {
   height: 3rem;
-  margin-top: 10px;
+  /* width: 2rem; */
+  margin-top: 20px;
 }
