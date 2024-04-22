@@ -19,7 +19,7 @@ body {
   height: 5px;
   animation: roundtime calc(10s) steps(var(10)) forwards;
   transform-origin: left center;
-  background: blue;
+  background: rgb(43, 43, 109);
 }
 
 .animated {
