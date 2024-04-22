@@ -24,17 +24,6 @@ body {
 
 button {
   padding: 2rem;
-  width: 20rem;
-  height: 5rem;
-  margin: 2rem;
-  font-size: 1.5rem;
-  color: white;
-  border-radius: 2rem;
-  transition: transform 0.3s ease-in-out;
-}
-
-.difficulty-btn {
-  padding: 2rem;
   width: 18rem;
   height: 4.5rem;
   margin: 2rem;
