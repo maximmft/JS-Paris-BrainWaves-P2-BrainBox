@@ -6,8 +6,7 @@ import ThemesPage from "./pages/ThemesPage";
 import QuizzPage from "./pages/QuizzPage";
 import ScoresPage from "./pages/ScoresPage";
 import DifficultiesPage from "./pages/DifficultiesPage";
-import HomePage from "./pages/HomePage";
-
+import HomePage from "./pages/HomePage/HomePage";
 
 const router = createBrowserRouter([
   {

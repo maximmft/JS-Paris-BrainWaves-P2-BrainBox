@@ -1,20 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&family=Solway:wght@300;400;500;700;800&display=swap");
 
-.header {
-  background-color: #3e81b9;
+header {
   text-align: center;
   display: flex;
   justify-content: center;
-  color: white;
   font-family: Itim;
   font-size: larger;
   box-shadow: 0px 4px 5px 1px rgba(157, 157, 157, 0.85);
+}
+
+header h1 {
+  color: white;
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 2rem;
 }
 
 .home-btn {
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
-  top: 28px;
+  top: 8px;
   right: 10px;
+}
+
+@media (min-width: 500px) {
+  .home-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .header h1 {
+    color: white;
+    font-family: Itim;
+    font-size: 2rem;
+    margin: 0;
+  }
 }

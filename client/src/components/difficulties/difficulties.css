@@ -11,6 +11,11 @@ body {
   align-items: center;
 }
 
+.difficultiesSection h1 {
+  margin: 6rem 0rem 2rem 0rem;
+  font-size: 2rem;
+}
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -31,4 +36,32 @@ button {
   align-items: center;
   justify-content: center;
   box-shadow: 0px 4px 5px 1px rgba(157, 157, 157, 0.85);
+}
+
+@media (min-width: 500px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  button {
+    padding: 2rem;
+    width: 20rem;
+    height: 5rem;
+    margin: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 2rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+  }
+
+  .difficultiesSection h1 {
+    font-size: 2rem;
+  }
 }
