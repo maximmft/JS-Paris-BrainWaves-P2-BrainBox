@@ -1,17 +1,26 @@
 import { useState } from "react";
 import "./CardQuestion.css";
-import PropTypes from "prop-types";
+import {PropTypes} from "prop-types";
+import { useNavigate } from "react-router-dom";
+
+import decode from 'decode-html'; 
 import Geography from "../../assets/icons/geography.png";
 import Timer from "./Timer";
+
 
 function CardQuestion({ quizzes }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [time, setTime] = useState(10);
   const [anim, setAnim] = useState("animated");
+  
+  const navigate = useNavigate();
 
-  const handlePageClick = () => {
+  const handlePageClick = (goodAnswers) => {
     setTime(10);
     setAnim("animated");
+    if(currentPage >= 10){
+      navigate("/scorespage", { state:{good:goodAnswers}})
+    }
     setCurrentPage(currentPage + 1);
   };
 
@@ -24,12 +33,15 @@ function CardQuestion({ quizzes }) {
   }
 
   const [clickAnswser, setClickAnswer] = useState("");
+  const [ goodAnswers, setGoodAnswers ] = useState(0);
 
   function checkAnswer(correctAnswer, answer, incorrectAnswers) {
-    if (clickAnswser === answer && correctAnswer === clickAnswser)
+    if (clickAnswser === answer && correctAnswer === clickAnswser){
       return "answers-green";
-    if (clickAnswser === answer && incorrectAnswers.includes(clickAnswser))
+    }
+    if (clickAnswser === answer && incorrectAnswers.includes(clickAnswser)){
       return "answers-red";
+    }
 
     return null;
   }
@@ -38,6 +50,13 @@ function CardQuestion({ quizzes }) {
 
   function questionCounter() {
     if (questionCount <= 9) setQuestionCount(questionCount + 1);
+  }
+
+  function handleAnswer(answer, correctAnswer){
+    if(answer === correctAnswer){
+      setGoodAnswers(goodAnswers+1)
+    }
+    setClickAnswer(answer)
   }
 
   return (
@@ -58,18 +77,14 @@ function CardQuestion({ quizzes }) {
               </div>
               <hr />
               <p key={quizzes.question} className="question">
-                {quizz.question
-                  .replace(/&amp;/g, "&")
-                  .replace(/&lt;/g, "<")
-                  .replace(/&gt;/g, ">")
-                  .replace(/&quot;/g, "&")}
+                {decode(quizz.question)}
               </p>
               <hr />
             </div>
             <section className="btn-answers">
               {quizz.answers.map((answer) => (
                 <button
-                  onClick={() => setClickAnswer(answer)}
+                  onClick={() => handleAnswer(answer, quizz.correct_answer)}
                   key={answer}
                   className={`answers ${checkAnswer(quizz.correct_answer, answer, quizz.incorrect_answers)}`}
                   type="button"
@@ -84,7 +99,7 @@ function CardQuestion({ quizzes }) {
       <button
         type="button"
         onClick={() => {
-          handlePageClick();
+          handlePageClick(goodAnswers);
           questionCounter();
         }}
         className="next-btn"
