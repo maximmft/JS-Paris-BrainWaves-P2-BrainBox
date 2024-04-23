@@ -21,13 +21,21 @@ import All from "../../assets/icons/all.png";
 
 function CardQuestion({ quizzes, id }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(12);
   const [anim, setAnim] = useState("animated");
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
-  const handlePageClick = () => {
-    setTime(10);
+  const navigate = useNavigate();
+
+  const handlePageClick = (setClickAnswer, goodAnswers) => {
+    setTime(12);
     setAnim("animated");
+    if (currentPage >= 10) {
+      navigate("/scorespage", { state: { good: goodAnswers } });
+    }
     setCurrentPage(currentPage + 1);
+    setClickAnswer("");
+    setButtonDisabled(false);
   };
 
   const questionPerPage = 1;
@@ -110,22 +118,33 @@ function CardQuestion({ quizzes, id }) {
   }
 
   const [clickAnswser, setClickAnswer] = useState("");
+  const [goodAnswers, setGoodAnswers] = useState(0);
 
-  function checkAnswer(correctAnswer, answer, incorrectAnswers) {
-    if (clickAnswser === answer && correctAnswer === clickAnswser)
+  function checkAnswer(correctAnswer, answer) {
+    if (!clickAnswser || clickAnswser === "") return null;
+
+    if (correctAnswer === clickAnswser && answer === clickAnswser) {
       return "answers-green";
-    if (clickAnswser === answer && incorrectAnswers.includes(clickAnswser))
-      return "answers-red";
+    }
+    if (correctAnswer === clickAnswser) return null;
 
+    if (answer === correctAnswer) return "answers-green";
+
+    if (answer !== correctAnswer) return "answers-red";
     return null;
   }
 
   const [questionCount, setQuestionCount] = useState(1);
-  const navigate = useNavigate();
-
   function questionCounter() {
     if (questionCount <= 9) setQuestionCount(questionCount + 1);
-    if (questionCount >= 10) navigate("/scorespage");
+    // if (questionCount >= 10) navigate("/scorespage");
+  }
+
+  function handleAnswer(answer, correctAnswer) {
+    if (answer === correctAnswer) {
+      setGoodAnswers(goodAnswers + 1);
+    }
+    setClickAnswer(answer);
   }
 
   return (
@@ -152,12 +171,18 @@ function CardQuestion({ quizzes, id }) {
           <section className="btn-answers">
             {quizz.answers.map((answer) => (
               <button
-                onClick={() => setClickAnswer(answer)}
+                onClick={() => {
+                  handleAnswer(answer, quizz.correct_answer);
+                  setClickAnswer(answer);
+                  setAnim("not-animated");
+                  setButtonDisabled(true);
+                }}
                 key={answer}
                 className={`${buttonClass} ${checkAnswer(quizz.correct_answer, answer, quizz.incorrect_answers)}`}
                 type="button"
+                disabled={buttonDisabled}
               >
-                {answer}
+                {decode(answer)}
               </button>
             ))}
           </section>
@@ -166,7 +191,7 @@ function CardQuestion({ quizzes, id }) {
       <button
         type="button"
         onClick={() => {
-          handlePageClick();
+          handlePageClick(setClickAnswer, goodAnswers);
           questionCounter();
         }}
         className="next-button"

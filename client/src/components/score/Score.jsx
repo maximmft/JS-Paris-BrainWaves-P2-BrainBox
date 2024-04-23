@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "./Score.css";
 import trophy from "../../assets/icons/trophy.png";
 import Confettis from "./Confettis";
@@ -13,8 +13,8 @@ function Score({ correctAnswers, totalAnswers }) {
     message = "You can do better";
   } else if (correctAnswers >= 0) {
     message = "Ask ChatGPT next time";
-  } 
-  
+  }
+
   const navigate = useNavigate();
 
   return (
@@ -27,7 +27,11 @@ function Score({ correctAnswers, totalAnswers }) {
       </h1>
       <img src={trophy} className="trophy" alt="Trophy" />
       <h3 className="mini-titles-scores">{message}</h3>
-      <button className="homebtn" type="button" onClick={() => navigate('/')}>
+      <button
+        className="homebtn"
+        type="button"
+        onClick={() => navigate("/themespage")}
+      >
         Home
       </button>
     </div>
