@@ -11,19 +11,25 @@ body {
 .round-time-bar {
   margin: 1rem;
   overflow: hidden;
-  width: 18rem;
+  width: 20rem;
 }
 
 .round-time-bar div {
   width: 100%;
-  height: 5px;
+  height: 6px;
   animation: roundtime calc(10s) steps(var(10)) forwards;
   transform-origin: left center;
-  background: rgb(43, 43, 109);
+  background: rgb(144, 86, 33);
+  border-radius: 46px;
+}
+
+.times-up {
+  margin-top: 2rem;
+  font-size: 2rem;
 }
 
 .animated {
-  animation: roundtime calc(10s) linear forwards;
+  animation: roundtime calc(12s) linear forwards;
 }
 
 @keyframes roundtime {
@@ -89,9 +95,9 @@ body {
 }
 
 .answers-red {
-  background-color: rgb(255, 0, 0);
+  background: linear-gradient(rgb(197, 65, 65), rgb(174, 44, 44));
   font-family: Itim;
-  font-size: large;
+  font-size: medium;
   flex-wrap: wrap;
   width: 10rem;
   height: 5rem;
@@ -104,9 +110,9 @@ body {
 }
 
 .answers-green {
-  background-color: green;
+  background: linear-gradient(rgb(88, 208, 88), rgb(81, 169, 81));
   font-family: Itim;
-  font-size: large;
+  font-size: medium;
   flex-wrap: wrap;
   width: 10rem;
   height: 5rem;

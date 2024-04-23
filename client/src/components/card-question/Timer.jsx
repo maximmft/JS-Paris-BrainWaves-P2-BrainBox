@@ -22,7 +22,7 @@ function Timer({ time, setTime, anim , setAnim}) {
 
   return (
     <>
-      <h3>{time !== 0 ? time : "Times up !"}</h3>
+      {/* <h3 className="times-up">{time !== 0 ? time : "Times up !"}</h3> */}
 
       <div
         className={`round-time-bar ${anim}`}

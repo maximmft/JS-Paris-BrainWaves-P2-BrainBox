@@ -1,4 +1,5 @@
 import { useState } from "react";
+import decode from "decode-html";
 import "./CardQuestion.css";
 import PropTypes from "prop-types";
 import Geography from "../../assets/icons/geography.png";
@@ -6,13 +7,16 @@ import Timer from "./Timer";
 
 function CardQuestion({ quizzes }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(12);
   const [anim, setAnim] = useState("animated");
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
-  const handlePageClick = () => {
-    setTime(10);
+  const handlePageClick = (setClickAnswer) => {
+    setTime(12);
     setAnim("animated");
     setCurrentPage(currentPage + 1);
+    setClickAnswer("");
+    setButtonDisabled(false);
   };
 
   const questionPerPage = 1;
@@ -25,13 +29,17 @@ function CardQuestion({ quizzes }) {
 
   const [clickAnswser, setClickAnswer] = useState("");
 
-  function checkAnswer(correctAnswer, answer, incorrectAnswers) {
-    if (clickAnswser === answer && correctAnswer === clickAnswser)
-      return "answers-green";
-    if (clickAnswser === answer && incorrectAnswers.includes(clickAnswser))
-      return "answers-red";
+  function checkAnswer(correctAnswer, answer) {
+    if (!clickAnswser || clickAnswser === "") return null;
 
-    return null;
+    if (correctAnswer === clickAnswser && answer === clickAnswser) {
+      return "answers-green";
+    }
+
+    if (answer === correctAnswer) return "answers-green";
+
+    if (answer !== correctAnswer) return "answers-red";
+    return null
   }
 
   const [questionCount, setQuestionCount] = useState(1);
@@ -49,42 +57,42 @@ function CardQuestion({ quizzes }) {
         setAnim={setAnim}
         anim={anim}
       />
-      {time !== 0 &&
-        displayQuestion().map((quizz) => (
-          <>
-            <div className="card-question">
-              <div className="icons">
-                <img className="icon" src={Geography} alt="" />
-              </div>
-              <hr />
-              <p key={quizzes.question} className="question">
-                {quizz.question
-                  .replace(/&amp;/g, "&")
-                  .replace(/&lt;/g, "<")
-                  .replace(/&gt;/g, ">")
-                  .replace(/&quot;/g, "&")}
-              </p>
-              <hr />
+      {displayQuestion().map((quizz) => (
+        <>
+          <div className="card-question">
+            <div className="icons">
+              <img className="icon" src={Geography} alt="" />
             </div>
-            <section className="btn-answers">
-              {quizz.answers.map((answer) => (
-                <button
-                  onClick={() => setClickAnswer(answer)}
-                  key={answer}
-                  className={`answers ${checkAnswer(quizz.correct_answer, answer, quizz.incorrect_answers)}`}
-                  type="button"
-                >
-                  {answer}
-                </button>
-              ))}
-            </section>
-          </>
-        ))}
+            <hr />
+            <p key={quizzes.question} className="question">
+              {decode(quizz.question)}
+            </p>
+            <hr />
+          </div>
+          <section className="btn-answers">
+            {quizz.answers.map((answer) => (
+              <button
+                onClick={() => {
+                  setClickAnswer(answer);
+                  setAnim("not-animated");
+                  setButtonDisabled(true);
+                }}
+                key={answer}
+                className={`answers ${checkAnswer(quizz.correct_answer, answer, quizz.incorrect_answers)}`}
+                type="button"
+                disabled={buttonDisabled}
+              >
+                {decode(answer)}
+              </button>
+            ))}
+          </section>
+        </>
+      ))}
       <p>Question {questionCount}/10</p>
       <button
         type="button"
         onClick={() => {
-          handlePageClick();
+          handlePageClick(setClickAnswer);
           questionCounter();
         }}
         className="next-btn"
