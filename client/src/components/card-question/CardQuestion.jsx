@@ -1,9 +1,11 @@
 import { useState } from "react";
 import decode from "decode-html";
 import "./CardQuestion.css";
-import PropTypes from "prop-types";
+import {PropTypes} from "prop-types";
+import { useNavigate } from "react-router-dom";
 import Geography from "../../assets/icons/geography.png";
 import Timer from "./Timer";
+
 
 function CardQuestion({ quizzes }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -11,9 +13,14 @@ function CardQuestion({ quizzes }) {
   const [anim, setAnim] = useState("animated");
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
-  const handlePageClick = (setClickAnswer) => {
+  const navigate = useNavigate();
+
+  const handlePageClick = (setClickAnswer,goodAnswers) => {
     setTime(12);
     setAnim("animated");
+    if(currentPage >= 10){
+      navigate("/scorespage", { state:{good:goodAnswers}})
+    }
     setCurrentPage(currentPage + 1);
     setClickAnswer("");
     setButtonDisabled(false);
@@ -28,6 +35,7 @@ function CardQuestion({ quizzes }) {
   }
 
   const [clickAnswser, setClickAnswer] = useState("");
+  const [ goodAnswers, setGoodAnswers ] = useState(0);
 
   function checkAnswer(correctAnswer, answer) {
     if (!clickAnswser || clickAnswser === "") return null;
@@ -35,6 +43,7 @@ function CardQuestion({ quizzes }) {
     if (correctAnswer === clickAnswser && answer === clickAnswser) {
       return "answers-green";
     }
+    if(correctAnswer === clickAnswser)  return null
 
     if (answer === correctAnswer) return "answers-green";
 
@@ -46,6 +55,13 @@ function CardQuestion({ quizzes }) {
 
   function questionCounter() {
     if (questionCount <= 9) setQuestionCount(questionCount + 1);
+  }
+
+  function handleAnswer(answer, correctAnswer){
+    if(answer === correctAnswer){
+      setGoodAnswers(goodAnswers+1)
+    }
+    setClickAnswer(answer)
   }
 
   return (
@@ -73,6 +89,7 @@ function CardQuestion({ quizzes }) {
             {quizz.answers.map((answer) => (
               <button
                 onClick={() => {
+                  handleAnswer(answer, quizz.correct_answer);
                   setClickAnswer(answer);
                   setAnim("not-animated");
                   setButtonDisabled(true);
@@ -92,7 +109,7 @@ function CardQuestion({ quizzes }) {
       <button
         type="button"
         onClick={() => {
-          handlePageClick(setClickAnswer);
+          handlePageClick(setClickAnswer,goodAnswers);
           questionCounter();
         }}
         className="next-btn"
