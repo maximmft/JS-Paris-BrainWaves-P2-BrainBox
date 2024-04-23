@@ -38,7 +38,7 @@ function GameInterface({ background, id, difficulty }) {
       >
         <Header id={id} />
         <div className="card-container">
-          <CardQuestion quizzes={quizzes} />
+          <CardQuestion quizzes={quizzes} id={id} />
         </div>
       </div>
     </section>

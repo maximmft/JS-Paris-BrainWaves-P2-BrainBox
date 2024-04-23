@@ -1,10 +1,25 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import decode from "decode-html";
 import "./CardQuestion.css";
+import "./answers.css";
 import PropTypes from "prop-types";
-import Geography from "../../assets/icons/geography.png";
 import Timer from "./Timer";
 
-function CardQuestion({ quizzes }) {
+import Geography from "../../assets/icons/geography.png";
+import History from "../../assets/icons/history.png";
+import Art from "../../assets/icons/art.png";
+import Music from "../../assets/icons/music.png";
+import Mythology from "../../assets/icons/mythology.png";
+import Nature from "../../assets/icons/nature.png";
+import Sports from "../../assets/icons/sports.png";
+import Animals from "../../assets/icons/animals.png";
+import Film from "../../assets/icons/film.png";
+import Videogames from "../../assets/icons/video-games.png";
+import Manga from "../../assets/icons/manga.png";
+import All from "../../assets/icons/all.png";
+
+function CardQuestion({ quizzes, id }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [time, setTime] = useState(10);
   const [anim, setAnim] = useState("animated");
@@ -23,6 +38,77 @@ function CardQuestion({ quizzes }) {
     return quizzes.slice(firstQuestionPage, lastPageQuestion);
   }
 
+  let hrClass = "";
+  if (id === "9") {
+    hrClass = "line-hr-all";
+  } else if (id === "12") {
+    hrClass = "line-hr-music";
+  } else if (id === "15") {
+    hrClass = "line-hr-video-game";
+  } else if (id === "31") {
+    hrClass = "line-hr-manga";
+  } else if (id === "11") {
+    hrClass = "line-hr-film";
+  } else if (id === "27") {
+    hrClass = "line-hr-animals";
+  } else if (id === "17") {
+    hrClass = "line-hr-nature";
+  } else if (id === "20") {
+    hrClass = "line-hr-mythology";
+  } else if (id === "21") {
+    hrClass = "line-hr-sports";
+  } else if (id === "22") {
+    hrClass = "line-hr-geography";
+  } else if (id === "23") {
+    hrClass = "line-hr-history";
+  } else {
+    hrClass = "line-hr-art";
+  }
+
+  const icons = () => {
+    if (id === "9") return All;
+    if (id === "12") return Music;
+    if (id === "15") return Videogames;
+    if (id === "31") return Manga;
+    if (id === "11") return Film;
+    if (id === "27") return Animals;
+    if (id === "17") return Nature;
+    if (id === "20") return Mythology;
+    if (id === "21") return Sports;
+    if (id === "22") return Geography;
+    if (id === "23") return History;
+    if (id === "25") return Art;
+
+    return null;
+  };
+
+  let buttonClass = "";
+  if (id === "9") {
+    buttonClass = "all-answers";
+  } else if (id === "12") {
+    buttonClass = "music-answers";
+  } else if (id === "15") {
+    buttonClass = "video-games-answers ";
+  } else if (id === "31") {
+    buttonClass = "manga-answers";
+  } else if (id === "11") {
+    buttonClass = "film-answers";
+  } else if (id === "27") {
+    buttonClass = "animals-answers";
+  } else if (id === "17") {
+    buttonClass = "nature-answers";
+  } else if (id === "20") {
+    buttonClass = "mythology-answers";
+  } else if (id === "21") {
+    buttonClass = "sports-answers";
+  } else if (id === "22") {
+    buttonClass = "geography-answers";
+  } else if (id === "25") {
+    buttonClass = "art-answers";
+  } else {
+    buttonClass = "history-answers";
+  }
+
   const [clickAnswser, setClickAnswer] = useState("");
 
   function checkAnswer(correctAnswer, answer, incorrectAnswers) {
@@ -35,9 +121,11 @@ function CardQuestion({ quizzes }) {
   }
 
   const [questionCount, setQuestionCount] = useState(1);
+  const navigate = useNavigate();
 
   function questionCounter() {
     if (questionCount <= 9) setQuestionCount(questionCount + 1);
+    if (questionCount >= 10) navigate("/scorespage");
   }
 
   return (
@@ -49,48 +137,43 @@ function CardQuestion({ quizzes }) {
         setAnim={setAnim}
         anim={anim}
       />
-      {time !== 0 &&
-        displayQuestion().map((quizz) => (
-          <>
-            <div className="card-question">
-              <div className="icons">
-                <img className="icon" src={Geography} alt="" />
-              </div>
-              <hr />
-              <p key={quizzes.question} className="question">
-                {quizz.question
-                  .replace(/&amp;/g, "&")
-                  .replace(/&lt;/g, "<")
-                  .replace(/&gt;/g, ">")
-                  .replace(/&quot;/g, "&")}
-              </p>
-              <hr />
+      {displayQuestion().map((quizz) => (
+        <>
+          <div className="card-question">
+            <div className="icons">
+              <img className="icon" src={icons()} alt="" />
             </div>
-            <section className="btn-answers">
-              {quizz.answers.map((answer) => (
-                <button
-                  onClick={() => setClickAnswer(answer)}
-                  key={answer}
-                  className={`answers ${checkAnswer(quizz.correct_answer, answer, quizz.incorrect_answers)}`}
-                  type="button"
-                >
-                  {answer}
-                </button>
-              ))}
-            </section>
-          </>
-        ))}
-      <p>Question {questionCount}/10</p>
+            <hr className={hrClass} />
+            <p key={quizzes.question} className="question">
+              {decode(quizz.question)}
+            </p>
+            <hr className={hrClass} />
+          </div>
+          <section className="btn-answers">
+            {quizz.answers.map((answer) => (
+              <button
+                onClick={() => setClickAnswer(answer)}
+                key={answer}
+                className={`${buttonClass} ${checkAnswer(quizz.correct_answer, answer, quizz.incorrect_answers)}`}
+                type="button"
+              >
+                {answer}
+              </button>
+            ))}
+          </section>
+        </>
+      ))}
       <button
         type="button"
         onClick={() => {
           handlePageClick();
           questionCounter();
         }}
-        className="next-btn"
+        className="next-button"
       >
         Next Question
       </button>
+      <p>Question {questionCount}/10</p>
     </section>
   );
 }
@@ -101,8 +184,10 @@ CardQuestion.propTypes = {
       question: PropTypes.string.isRequired,
       correct_answer: PropTypes.string.isRequired,
       incorrect_answers: PropTypes.arrayOf(PropTypes.string).isRequired,
+      answers: PropTypes.arrayOf(PropTypes.string).isRequired,
     })
   ).isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default CardQuestion;
