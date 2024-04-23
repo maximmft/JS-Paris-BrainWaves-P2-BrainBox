@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import PropTypes from 'prop-types';
-
-
+import "../colors/colors.css";
 
 function Timer({ time, setTime, anim , setAnim}) {
   useEffect(() => {
@@ -22,7 +21,7 @@ function Timer({ time, setTime, anim , setAnim}) {
 
   return (
     <>
-      <h3>{time !== 0 ? time : "Times up !"}</h3>
+      {/* <h3 className="times-up">{time !== 0 ? time : "Times up !"}</h3> */}
 
       <div
         className={`round-time-bar ${anim}`}
