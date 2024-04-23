@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import PropTypes from 'prop-types';
-
-
+import "../colors/colors.css";
 
 function Timer({ time, setTime, anim , setAnim}) {
   useEffect(() => {
