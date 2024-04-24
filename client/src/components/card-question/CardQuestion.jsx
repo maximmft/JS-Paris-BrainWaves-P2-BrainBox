@@ -38,6 +38,8 @@ function CardQuestion({ quizzes, id }) {
     setButtonDisabled(false);
   };
 
+  if (time === 0 && buttonDisabled === false) setButtonDisabled(true)
+
   const questionPerPage = 1;
   const lastPageQuestion = questionPerPage * currentPage;
   const firstQuestionPage = lastPageQuestion - questionPerPage;
