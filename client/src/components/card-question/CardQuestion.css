@@ -24,8 +24,9 @@ body {
 }
 
 .times-up {
-  margin-top: 2rem;
-  font-size: 2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: rgb(129, 31, 31);
 }
 
 .animated {
