@@ -19,7 +19,6 @@ import Manga from "../../assets/icons/manga.png";
 import All from "../../assets/icons/all.png";
 
 function CardQuestion({ quizzes, id }) {
-
   const [currentPage, setCurrentPage] = useState(1);
   const [time, setTime] = useState(12);
   const [anim, setAnim] = useState("animated");
@@ -38,7 +37,7 @@ function CardQuestion({ quizzes, id }) {
     setButtonDisabled(false);
   };
 
-  if (time === 0 && buttonDisabled === false) setButtonDisabled(true)
+  if (time === 0 && buttonDisabled === false) setButtonDisabled(true);
 
   const questionPerPage = 1;
   const lastPageQuestion = questionPerPage * currentPage;
@@ -139,7 +138,7 @@ function CardQuestion({ quizzes, id }) {
   const [questionCount, setQuestionCount] = useState(1);
   function questionCounter() {
     if (questionCount <= 9) setQuestionCount(questionCount + 1);
-    }
+  }
 
   function handleAnswer(answer, correctAnswer) {
     if (answer === correctAnswer) {
@@ -196,7 +195,8 @@ function CardQuestion({ quizzes, id }) {
                   .replace(/&ldquo;/g, "'")
                   .replace(/&hellip;/g, "...")
                   .replace(/&rdquo;/g, "'")
-                  .replace(/&rsquo;/g, "’")}
+                  .replace(/&rsquo;/g, "’")
+                  .replace(/&iacute;/g, "í")}
               </button>
             ))}
           </section>
