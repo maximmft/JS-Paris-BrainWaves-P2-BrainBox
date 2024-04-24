@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import "../colors/colors.css";
 
 function Timer({ time, setTime, anim, setAnim }) {
+ 
   useEffect(() => {
     if (time !== 0) {
       const interval = setInterval(() => {
@@ -18,11 +19,11 @@ function Timer({ time, setTime, anim, setAnim }) {
     }
 
     return () => {};
-  });
+  },[time]);
 
   return (
     <>
-      {/* <h3>{time !== 0 ? time : "Times up !"}</h3> */}
+      <h3 className="times-up">{time === 0 && "Times up !"}</h3>
 
       <div
         className={`round-time-bar ${anim}`}
