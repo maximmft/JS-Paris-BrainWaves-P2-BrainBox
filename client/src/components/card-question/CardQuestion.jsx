@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import decode from "decode-html";
 import "./CardQuestion.css";
 import "./answers.css";
 import PropTypes from "prop-types";
@@ -20,6 +19,7 @@ import Manga from "../../assets/icons/manga.png";
 import All from "../../assets/icons/all.png";
 
 function CardQuestion({ quizzes, id }) {
+
   const [currentPage, setCurrentPage] = useState(1);
   const [time, setTime] = useState(12);
   const [anim, setAnim] = useState("animated");
@@ -137,8 +137,7 @@ function CardQuestion({ quizzes, id }) {
   const [questionCount, setQuestionCount] = useState(1);
   function questionCounter() {
     if (questionCount <= 9) setQuestionCount(questionCount + 1);
-    // if (questionCount >= 10) navigate("/scorespage");
-  }
+    }
 
   function handleAnswer(answer, correctAnswer) {
     if (answer === correctAnswer) {
@@ -164,7 +163,13 @@ function CardQuestion({ quizzes, id }) {
             </div>
             <hr className={hrClass} />
             <p key={quizzes.question} className="question">
-              {decode(quizz.question)}
+              {quizz.question
+                .replace(/&quot;/g, '"')
+                .replace(/&#039;/g, "")
+                .replace(/&shy;/g, "")
+                .replace(/&ldquo;/g, "'")
+                .replace(/&rdquo;/g, "'")
+                .replace(/&rsquo;/g, "’")}
             </p>
             <hr className={hrClass} />
           </div>
@@ -182,7 +187,14 @@ function CardQuestion({ quizzes, id }) {
                 type="button"
                 disabled={buttonDisabled}
               >
-                {decode(answer)}
+                {answer
+                  .replace(/&deg;/, "°")
+                  .replace(/&quot;/g, '"')
+                  .replace(/&#039;/g, "'")
+                  .replace(/&ldquo;/g, "'")
+                  .replace(/&hellip;/g, "...")
+                  .replace(/&rdquo;/g, "'")
+                  .replace(/&rsquo;/g, "’")}
               </button>
             ))}
           </section>
@@ -198,7 +210,7 @@ function CardQuestion({ quizzes, id }) {
       >
         Next Question
       </button>
-      <p>Question {questionCount}/10</p>
+      <p className="question-counter">Question {questionCount}/10</p>
     </section>
   );
 }

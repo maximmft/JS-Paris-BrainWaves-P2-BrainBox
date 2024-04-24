@@ -74,6 +74,7 @@
   color: rgb(168, 171, 253);
   border: 0;
   border-bottom: 1.5px dashed rgb(168, 171, 253);
+  width: 18rem;
   margin-top: 20px;
 }
 
@@ -273,32 +274,52 @@
   color: white;
 }
 
-.answers-red {
-  background-color: rgb(255, 0, 0);
-  font-family: Itim;
-  font-size: large;
-  flex-wrap: wrap;
-  width: 10rem;
-  height: 5rem;
-  padding: 0;
-  margin: 0.5rem;
-  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
-  border-radius: 20px;
-  border: none;
-  color: white;
-}
+@media (min-width: 900px) {
+  .line-hr-nature {
+    width: 25rem;
+  }
 
-.answers-green {
-  background-color: green;
-  font-family: Itim;
-  font-size: large;
-  flex-wrap: wrap;
-  width: 10rem;
-  height: 5rem;
-  padding: 0;
-  margin: 0.5rem;
-  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
-  border-radius: 20px;
-  border: none;
-  color: white;
+  .line-hr-history {
+    width: 25rem;
+  }
+
+  .line-hr-sports {
+    width: 25rem;
+  }
+
+  .line-hr-geography {
+    width: 25rem;
+  }
+
+  .line-hr-art {
+    width: 25rem;
+  }
+
+  .line-hr-music {
+    width: 25rem;
+  }
+
+  .line-hr-all {
+    width: 25rem;
+  }
+
+  .line-hr-mythology {
+    width: 25rem;
+  }
+
+  .line-hr-film {
+    width: 25rem;
+  }
+
+  .line-hr-video-game {
+    width: 25rem;
+  }
+
+  .line-hr-animals {
+    width: 25rem;
+  }
+
+  .line-hr-manga {
+    width: 25rem;
+  }
 }

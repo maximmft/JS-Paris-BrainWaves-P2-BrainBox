@@ -19,7 +19,7 @@ body {
   height: 6px;
   animation: roundtime calc(10s) steps(var(10)) forwards;
   transform-origin: left center;
-  background: rgb(144, 86, 33);
+  background: linear-gradient(rgb(251 133 87), rgb(210 115 77));
   border-radius: 46px;
 }
 
@@ -39,7 +39,6 @@ body {
 }
 
 .card-question {
-  margin: 0rem 0rem 0rem 0rem;
   height: 18rem;
   width: 90%;
   background-color: white;
@@ -127,13 +126,26 @@ body {
   font-size: small;
 }
 
+.question-counter {
+  font-family: Itim;
+}
+
 @media (min-width: 900px) {
   .card-question {
     width: 40%;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   hr {
     width: 25rem;
+  }
+
+  .next-button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .question-counter {
+    margin: 0;
   }
 }
