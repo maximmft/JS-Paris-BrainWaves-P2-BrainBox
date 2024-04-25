@@ -1,0 +1,325 @@
+.line-hr-nature {
+  color: green;
+  border: 0;
+  border-bottom: 1.5px dashed green;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-history {
+  color: #c2384a;
+  border: 0;
+  border-bottom: 1.5px dashed #c2384a;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-sports {
+  color: #ffb771;
+  border: 0;
+  border-bottom: 1.5px dashed #ffb771;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-geography {
+  color: #3e81b9;
+  border: 0;
+  border-bottom: 1.5px dashed #3e81b9;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-art {
+  color: #f364ff;
+  border: 0;
+  border-bottom: 1.5px dashed #f364ff;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-music {
+  color: #ff4fb3;
+  border: 0;
+  border-bottom: 1.5px dashed #ff4fb3;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-all {
+  color: #d194e7;
+  border: 0;
+  border-bottom: 1.5px dashed #d194e7;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-mythology {
+  color: #e67474;
+  border: 0;
+  border-bottom: 1.5px dashed #e67474;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-film {
+  color: rgb(144, 144, 144);
+  border: 0;
+  border-bottom: 1.5px dashed rgb(144, 144, 144);
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-video-game {
+  color: rgb(168, 171, 253);
+  border: 0;
+  border-bottom: 1.5px dashed rgb(168, 171, 253);
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-animals {
+  color: #c99c54;
+  border: 0;
+  border-bottom: 1.5px dashed #c99c54;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.line-hr-manga {
+  color: #e899cc;
+  border: 0;
+  border-bottom: 1.5px dashed #e899cc;
+  width: 288px;
+  margin-top: 20px;
+}
+
+.nature-answers {
+  background-color: #54925d;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.history-answers {
+  background-color: #c2384a;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.sports-answers {
+  background-color: #eda259;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.geography-answers {
+  background-color: #3e81b9;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.art-answers {
+  background-color: #f364ff;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.music-answers {
+  background-color: #ff4fb3;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.all-answers {
+  background-color: #ff8ece;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.mythology-answers {
+  background-color: #e76bb6;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.film-answers {
+  background-color: #cbcbcb;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.video-games-answers {
+  background-color: #8a76e0;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.manga-answers {
+  background-color: #e899cc;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+.animals-answers {
+  background-color: #c99c54;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+
+@media (min-width: 900px) {
+  .line-hr-nature {
+    width: 25rem;
+  }
+
+  .line-hr-history {
+    width: 25rem;
+  }
+
+  .line-hr-sports {
+    width: 25rem;
+  }
+
+  .line-hr-geography {
+    width: 25rem;
+  }
+
+  .line-hr-art {
+    width: 25rem;
+  }
+
+  .line-hr-music {
+    width: 25rem;
+  }
+
+  .line-hr-all {
+    width: 25rem;
+  }
+
+  .line-hr-mythology {
+    width: 25rem;
+  }
+
+  .line-hr-film {
+    width: 25rem;
+  }
+
+  .line-hr-video-game {
+    width: 25rem;
+  }
+
+  .line-hr-animals {
+    width: 25rem;
+  }
+
+  .line-hr-manga {
+    width: 25rem;
+  }
+}

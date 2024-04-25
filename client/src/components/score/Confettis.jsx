@@ -1,44 +1,41 @@
-function Confettis(){
-    return (
-
+function Confettis() {
+  return (
     <>
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
-        <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
+      <div className="confetti" />
     </>
-
-    )
-    
+  );
 }
 
-export default Confettis
+export default Confettis;

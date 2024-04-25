@@ -19,13 +19,14 @@ body {
   height: 6px;
   animation: roundtime calc(10s) steps(var(10)) forwards;
   transform-origin: left center;
-  background: rgb(144, 86, 33);
+  background: linear-gradient(rgb(251 133 87), rgb(210 115 77));
   border-radius: 46px;
 }
 
 .times-up {
-  margin-top: 2rem;
-  font-size: 2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: rgb(129, 31, 31);
 }
 
 .animated {
@@ -39,11 +40,9 @@ body {
 }
 
 .card-question {
-  margin: 6.5rem 0rem 0rem 0rem;
   height: 18rem;
   width: 90%;
   background-color: white;
-  border: 2px solid #3e81b9;
   border-radius: 10px;
   box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
 }
@@ -53,7 +52,6 @@ body {
   font-weight: 900;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  /* height: 5rem; */
   text-align: center;
   margin: 2rem 1.5rem 2rem 1.5rem;
 }
@@ -88,10 +86,6 @@ body {
   border-radius: 20px;
   border: none;
   color: white;
-  /* padding: 2rem; */
-  /* width: 18rem; */
-  /* height: 4.5rem; */
-  /* font-size: 1.5rem; */
 }
 
 .answers-red {
@@ -124,30 +118,33 @@ body {
   color: white;
 }
 
-hr {
-  color: #3e81b9;
-  border: 0;
-  border-bottom: 1px dashed #3e81b9;
-  width: 18rem;
-  margin-top: 20px;
+.next-button {
+  background: linear-gradient(rgb(251 133 87), rgb(210 115 77));
+  height: 10px;
+  width: 200px;
+  font-size: small;
 }
 
-/* button:hover {
-  background-color: #65a9e1;
-} */
-
-.next-button {
-  background-color: #3e81b9;
-  font-size: small;
+.question-counter {
+  font-family: Itim;
 }
 
 @media (min-width: 900px) {
   .card-question {
     width: 40%;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   hr {
     width: 25rem;
+  }
+
+  .next-button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .question-counter {
+    margin: 0;
   }
 }
