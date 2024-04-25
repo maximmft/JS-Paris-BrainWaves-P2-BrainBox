@@ -1,5 +1,4 @@
 import { useState } from "react";
-import decode from "decode-html";
 import "./CardQuestion.css";
 import {PropTypes} from "prop-types";
 import { useNavigate } from "react-router-dom";
@@ -81,7 +80,7 @@ function CardQuestion({ quizzes }) {
             </div>
             <hr />
             <p key={quizzes.question} className="question">
-              {decode(quizz.question)}
+              {quizz.question}
             </p>
             <hr />
           </div>
@@ -99,7 +98,7 @@ function CardQuestion({ quizzes }) {
                 type="button"
                 disabled={buttonDisabled}
               >
-                {decode(answer)}
+                {(answer)}
               </button>
             ))}
           </section>
