@@ -196,7 +196,10 @@ function CardQuestion({ quizzes, id }) {
                   .replace(/&hellip;/g, "...")
                   .replace(/&rdquo;/g, "'")
                   .replace(/&rsquo;/g, "’")
-                  .replace(/&iacute;/g, "í")}
+                  .replace(/&iacute;/g, "í")
+                  .replace(/&eacute/g, "é")
+                  .replace(/&ndash;/g, "-")
+                  }
               </button>
             ))}
           </section>
