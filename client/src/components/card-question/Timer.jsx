@@ -1,8 +1,10 @@
 import { useEffect } from "react";
-import PropTypes from 'prop-types';
+
+import PropTypes from "prop-types";
 import "../colors/colors.css";
 
-function Timer({ time, setTime, anim , setAnim}) {
+function Timer({ time, setTime, anim, setAnim }) {
+ 
   useEffect(() => {
     if (time !== 0) {
       const interval = setInterval(() => {
@@ -12,16 +14,16 @@ function Timer({ time, setTime, anim , setAnim}) {
       return () => clearInterval(interval);
     }
 
-    if(time <= 0){
-        setAnim("not-animated")
+    if (time <= 0) {
+      setAnim("not-animated");
     }
 
     return () => {};
-  });
+  },[time]);
 
   return (
     <>
-      {/* <h3 className="times-up">{time !== 0 ? time : "Times up !"}</h3> */}
+      <h3 className="times-up">{time === 0 && "Times up !"}</h3>
 
       <div
         className={`round-time-bar ${anim}`}
@@ -35,10 +37,10 @@ function Timer({ time, setTime, anim , setAnim}) {
 }
 
 Timer.propTypes = {
-    time: PropTypes.number.isRequired,
-    setTime: PropTypes.isRequired,
-    anim: PropTypes.string.isRequired,
-    setAnim: PropTypes.isRequired
-}
+  time: PropTypes.number.isRequired,
+  setTime: PropTypes.isRequired,
+  anim: PropTypes.string.isRequired,
+  setAnim: PropTypes.isRequired,
+};
 
 export default Timer;

@@ -29,3 +29,9 @@
   /* width: 2rem; */
   margin-top: 20px;
 }
+
+@media (min-width: 900px) {
+  .background {
+    height: 100vh;
+  }
+}
