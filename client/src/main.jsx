@@ -16,9 +16,9 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/themespage", element: <ThemesPage /> },
-      { path: "/numberquestions", element: <NumberQuestions />},
-      { path: "/difficultiespage/:id", element: <DifficultiesPage /> },
-      { path: "/difficultiespage/:id/:difficulty", element: <QuizzPage /> },
+      { path: "/numberquestions/:id", element: <NumberQuestions />},
+      { path: "/difficultiespage/:id/:numberSelector", element: <DifficultiesPage /> },
+      { path: "/difficultiespage/:id/:numberSelector/:difficulty", element: <QuizzPage /> },
       { path: "/scorespage", element: <ScoresPage /> },
     ],
   },

@@ -1,10 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./difficulties.css";
 import "../colors/colors.css";
 import Background from "../../assets/background/background.png";
 
 function Difficulties({ id }) {
+  const { numberSelector } = useParams();
+
   let buttonClass = "";
   if (id === "9") {
     buttonClass = "all-background";
@@ -44,21 +46,27 @@ function Difficulties({ id }) {
         <button
           type="button"
           className={buttonClass}
-          onClick={() => navigate(`/difficultiespage/${id}/easy`)}
+          onClick={() =>
+            navigate(`/difficultiespage/${id}/${numberSelector}/easy`)
+          }
         >
           Easy
         </button>
         <button
           type="button"
           className={buttonClass}
-          onClick={() => navigate(`/difficultiespage/${id}/medium`)}
+          onClick={() =>
+            navigate(`/difficultiespage/${id}/${numberSelector}/medium`)
+          }
         >
           Medium
         </button>
         <button
           type="button"
           className={buttonClass}
-          onClick={() => navigate(`/difficultiespage/${id}/hard`)}
+          onClick={() =>
+            navigate(`/difficultiespage/${id}/${numberSelector}/hard`)
+          }
         >
           Hard
         </button>

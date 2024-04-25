@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import "./CardQuestion.css";
 import "./answers.css";
@@ -23,13 +23,13 @@ function CardQuestion({ quizzes, id }) {
   const [time, setTime] = useState(12);
   const [anim, setAnim] = useState("animated");
   const [buttonDisabled, setButtonDisabled] = useState(false);
-
+  const { numberSelector } = useParams();
   const navigate = useNavigate();
 
   const handlePageClick = (setClickAnswer, goodAnswers) => {
     setTime(12);
     setAnim("animated");
-    if (currentPage >= 10) {
+    if (currentPage >= numberSelector) {
       navigate("/scorespage", { state: { good: goodAnswers } });
     }
     setCurrentPage(currentPage + 1);
@@ -137,7 +137,7 @@ function CardQuestion({ quizzes, id }) {
 
   const [questionCount, setQuestionCount] = useState(1);
   function questionCounter() {
-    if (questionCount <= 9) setQuestionCount(questionCount + 1);
+    if (questionCount <= numberSelector) setQuestionCount(questionCount + 1);
   }
 
   function handleAnswer(answer, correctAnswer) {
@@ -214,7 +214,9 @@ function CardQuestion({ quizzes, id }) {
       >
         Next Question
       </button>
-      <p className="question-counter">Question {questionCount}/10</p>
+      <p className="question-counter">
+        Question {questionCount}/{numberSelector}
+      </p>
     </section>
   );
 }

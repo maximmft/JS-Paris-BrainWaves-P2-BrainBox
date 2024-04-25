@@ -8,7 +8,7 @@ function Theme({ name, id }) {
   return (
     <div
       className={`theme-card ${name === "Entertainment: Video Games" ? "video-games" : ""} ${name === "Entertainment: Japanese Anime & Manga" ? "manga" : ""} ${name === "Entertainment: Film" ? "film" : ""} ${name === "Animals" ? "animals" : ""} ${name === "Science & Nature" ? "nature" : ""} ${name === "History" ? "history" : ""} ${name === "Art" ? "art" : ""} ${name === "Entertainment: Music" ? "music" : ""} ${name === "Mythology" ? "mythology" : ""} ${name === "Geography" ? "geography" : ""} ${name === "Sports" ? "sports" : ""}${name === "General Knowledge" ? "all" : ""}`}
-      onClick={() => navigate(`/difficultiespage/${id}`)} onKeyDown={() =>navigate(`/difficultiespage/${id}`)} role="presentation">
+      onClick={() => navigate(`/numberquestions/${id}`)} onKeyDown={() =>navigate(`/numberquesstions/${id}`)} role="presentation">
       <ThemeCard name={name} id={id} />
     </div>
   );
