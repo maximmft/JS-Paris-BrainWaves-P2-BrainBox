@@ -28,7 +28,19 @@ function Difficulties({ id }) {
     buttonClass = "geography-background";
   } else if (id === "23") {
     buttonClass = "history-background";
-  } else {
+  } else if (id === "10") {
+    buttonClass = "books-background";
+  } else if (id === "14") {
+    buttonClass = "television-background";
+  } else if (id === "16") {
+    buttonClass = "board-games-background";
+  } else if (id === "26") {
+    buttonClass = "celebrities-background";
+  } else if (id === "29") {
+    buttonClass = "comics-background";
+  } else if (id === "28") {
+    buttonClass = "vehicles-background";}
+    else {
     buttonClass = "art-background";
   }
 

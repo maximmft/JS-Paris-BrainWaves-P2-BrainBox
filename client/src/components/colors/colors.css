@@ -1,3 +1,33 @@
+.books-background {
+  background: linear-gradient(#ffdccd, #e1ab91);
+  color: white;
+}
+
+.television-background {
+  background: linear-gradient(#d7cef8, #d19aea);
+  color: white;
+}
+
+.board-games-background {
+  background: linear-gradient(#7ec3ae, #dbe8aa);
+  color: white;
+}
+
+.celebrities-background {
+  background: linear-gradient(#f9f99e, #d589b8);
+  color: white;
+}
+
+.vehicles-background {
+  background: linear-gradient(#b6b4e5, #8e8d8d);
+  color: white;
+}
+
+.comics-background {
+  background: linear-gradient(#dffaa9, #669a92);
+  color: white;
+}
+
 .nature-background {
   background: linear-gradient(#54925d, #3f7249);
   color: white;

@@ -12,6 +12,12 @@ import Animals from "../../assets/icons/animals.png";
 import Film from "../../assets/icons/film.png";
 import Videogames from "../../assets/icons/video-games.png";
 import Manga from "../../assets/icons/manga.png";
+import Board from "../../assets/icons/board.png";
+import Books from "../../assets/icons/books.png";
+import Celebrities from "../../assets/icons/celebrities.png";
+import Comics from "../../assets/icons/comics.png";
+import Television from "../../assets/icons/television.png";
+import Vehicle from "../../assets/icons/vehicle.png";
 
 
 function ThemeCard({ name }) {
@@ -30,6 +36,12 @@ function ThemeCard({ name }) {
       {name === "Mythology" && <img src={Mythology} alt="icon medusa" />}
       {name === "Science & Nature" && <img src={Nature} alt="icon tree" />}
       {name === "Sports" && <img src={Sports} alt="icon sport" />}
+      {name === "Entertainment: Books" && <img src={Books} alt="icon book" />}
+      {name === "Entertainment: Television" && <img src={Television} alt="icon television" />}
+      {name === "Entertainment: Board Games" && <img src={Board} alt="icon board-games" />}
+      {name === "Celebrities" && <img src={Celebrities} alt="icon oscar" />}
+      {name === "Vehicles" && <img src={Vehicle} alt="icon vehicle" />}
+      {name === "Entertainment: Comics" && <img src={Comics} alt="icon batman" />}
       <h3>{name}</h3>
       
     </>

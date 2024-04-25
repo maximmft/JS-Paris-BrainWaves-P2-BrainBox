@@ -40,6 +40,24 @@ function Header({ id }) {
   } else if (id === "23") {
     buttonClass = "history-background";
     nameQuizzes = "History";
+  } else if (id === "10") {
+    buttonClass = "books-background";
+    nameQuizzes = "Books";
+  } else if (id === "14") {
+    buttonClass = "television-background";
+    nameQuizzes = "Television";
+  } else if (id === "16") {
+    buttonClass = "board-games-background";
+    nameQuizzes = "Board Games";
+  } else if (id === "26") {
+    buttonClass = "celebrities-background";
+    nameQuizzes = "Celebrities";
+  } else if (id === "28") {
+    buttonClass = "vehicles-background";
+    nameQuizzes = "Vehicles";
+  } else if (id === "29") {
+    buttonClass = "comics-background";
+    nameQuizzes = "Comics";
   } else {
     buttonClass = "art-background";
     nameQuizzes = "Art";

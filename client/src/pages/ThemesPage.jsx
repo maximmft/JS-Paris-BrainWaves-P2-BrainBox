@@ -8,14 +8,13 @@ import SearchBar from "../components/SearchBar/searchbar";
 
 function ThemesPage() {
   const [themes, setThemes] = useState([]);
-  const [tabFilterTheme, setTabFilterTheme] = useState(themes)
+  const [tabFilterTheme, setTabFilterTheme] = useState(themes);
 
   const GetThemes = () => {
     axios.get("https://opentdb.com/api_category.php").then((response) => {
       setThemes(response.data.trivia_categories);
     });
   };
-
 
   useEffect(() => {
     setTabFilterTheme(themes);
@@ -25,20 +24,24 @@ function ThemesPage() {
     GetThemes();
   }, []);
 
-  const selectedThemesId = [9, 11, 12, 15, 17, 20, 21, 22, 23, 25, 27,31];
+  const selectedThemesId = [
+    9, 11, 12, 15, 17, 20, 21, 22, 23, 25, 27, 31, 10, 14, 16, 26, 28, 29,
+  ];
   const filteredThemes = tabFilterTheme.filter((theme) =>
     selectedThemesId.includes(theme.id)
   );
 
-    const handleSearch = (event) => {
-        event.preventDefault();
-        const filter = themes.filter(theme => theme.name.toLowerCase().includes(event.target.value))
-        if (filter.length !== 0){
-            setTabFilterTheme(filter)
-          } else {
-            setTabFilterTheme(themes)
-          }
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const filter = themes.filter((theme) =>
+      theme.name.toLowerCase().includes(event.target.value)
+    );
+    if (filter.length !== 0) {
+      setTabFilterTheme(filter);
+    } else {
+      setTabFilterTheme(themes);
     }
+  };
 
   return (
     <>
@@ -47,13 +50,13 @@ function ThemesPage() {
           <h1>Hello Brain Boxer!</h1>
           <h2>Ready for a quizz?</h2>
         </div>
-        <img src={Logo} id="logo-theme-page" alt="logo Brainbox"/>
+        <img src={Logo} id="logo-theme-page" alt="logo Brainbox" />
       </div>
-      <SearchBar handleSearch={handleSearch}/>
+      <SearchBar handleSearch={handleSearch} />
       <h1 id="explore">Explore by themes</h1>
       <div className="theme-cards">
         {filteredThemes.map((theme) => (
-          <Theme name={theme.name} id={(theme.id)} key={theme.id} />
+          <Theme name={theme.name} id={theme.id} key={theme.id} />
         ))}
       </div>
       <Outlet />

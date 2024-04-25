@@ -17,6 +17,13 @@ import Film from "../../assets/icons/film.png";
 import Videogames from "../../assets/icons/video-games.png";
 import Manga from "../../assets/icons/manga.png";
 import All from "../../assets/icons/all.png";
+import Board from "../../assets/icons/board.png";
+import Books from "../../assets/icons/books.png";
+import Celebrities from "../../assets/icons/celebrities.png";
+import Comics from "../../assets/icons/comics.png";
+import Television from "../../assets/icons/television.png";
+import Vehicle from "../../assets/icons/vehicle.png";
+
 
 function CardQuestion({ quizzes, id }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -70,6 +77,18 @@ function CardQuestion({ quizzes, id }) {
     hrClass = "line-hr-geography";
   } else if (id === "23") {
     hrClass = "line-hr-history";
+  } else if (id === "10") {
+    hrClass = "line-hr-books";
+  } else if (id === "14") {
+    hrClass = "line-hr-television";
+  } else if (id === "16") {
+    hrClass = "line-hr-board";
+  } else if (id === "26") {
+    hrClass = "line-hr-celebrities";
+  } else if (id === "28") {
+    hrClass = "line-hr-vehicles";
+  } else if (id === "29") {
+    hrClass = "line-hr-comics";
   } else {
     hrClass = "line-hr-art";
   }
@@ -87,6 +106,12 @@ function CardQuestion({ quizzes, id }) {
     if (id === "22") return Geography;
     if (id === "23") return History;
     if (id === "25") return Art;
+    if (id === "10") return Books;
+    if (id === "14") return Television;
+    if (id === "16") return Board;
+    if (id === "26") return Celebrities;
+    if (id === "28") return Vehicle;
+    if (id === "29") return Comics;
 
     return null;
   };
@@ -114,6 +139,18 @@ function CardQuestion({ quizzes, id }) {
     buttonClass = "geography-answers";
   } else if (id === "25") {
     buttonClass = "art-answers";
+  } else if (id === "10") {
+    buttonClass = "books-answers";
+  } else if (id === "14") {
+    buttonClass = "television-answers";
+  } else if (id === "16") {
+    buttonClass = "board-games-answers";
+  } else if (id === "26") {
+    buttonClass = "celebrities-answers";
+  } else if (id === "28") {
+    buttonClass = "vehicles-answers";
+  } else if (id === "29") {
+    buttonClass = "comics-answers";
   } else {
     buttonClass = "history-answers";
   }
