@@ -13,7 +13,7 @@ function SelectNumbQuestion() {
     <>
       <Header id={id} />
       <div
-        className="background"
+        className="background-number"
         style={{ backgroundImage: `url(${Background})` }}
       >
         <section className="number-selection">

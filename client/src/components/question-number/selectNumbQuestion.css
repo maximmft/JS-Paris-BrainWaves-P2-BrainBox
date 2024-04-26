@@ -1,7 +1,8 @@
-.background {
+.background-number {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 .number-selection {
   display: flex;
