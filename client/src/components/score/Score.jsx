@@ -9,6 +9,7 @@ import Confettis from "./Confettis";
 import background from "../../assets/background/background.png";
 
 function Score({ correctAnswers, totalAnswers }) {
+  // const {numberSelector} = useParams();
   let message;
   let image = ""
 

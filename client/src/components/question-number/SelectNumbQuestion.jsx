@@ -23,7 +23,7 @@ function SelectNumbQuestion() {
             className="input-range"
             style={{
               WebkitAppearance: "none",
-              background: `linear-gradient(90deg ,rgb(251 133 87) ${(numberSelector * 100) / 25}%, rgb(223, 223, 223), rgb(223, 223, 223), rgb(223, 223, 223) `,
+              background: `linear-gradient(90deg ,rgb(251 133 87) ${(numberSelector * 100) / 25}%, rgb(223, 223, 223), rgb(223, 223, 223), rgb(223, 223, 223), rgb(223, 223, 223), rgb(223, 223, 223), rgb(223, 223, 223) `,
             }}
             type="range"
             value={numberSelector}
