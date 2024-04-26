@@ -1,5 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+import Background from "../../assets/background/background.png";
+import "./selectNumbQuestion.css";
+import Header from "../Header/Header";
 
 function SelectNumbQuestion() {
   const { id } = useParams();
@@ -8,20 +11,37 @@ function SelectNumbQuestion() {
 
   return (
     <>
-      <h1>Select number of questions</h1>
-      <input
-        type="range"
-        value={numberSelector}
-        min="1"
-        max="50"
-        onChange={(e) => setNumberSelector(e.target.value)}
-      />
-      <button
-        type="button"
-        onClick={() => navigate(`/difficultiespage/${id}/${numberSelector}`)}
+      <Header id={id} />
+      <div
+        className="background"
+        style={{ backgroundImage: `url(${Background})` }}
       >
-        Next page
-      </button>
+        <section className="number-selection">
+          <h1 className="title">Select number of questions</h1>
+          <h2 className="questions">{numberSelector}</h2>
+          <input
+            className="input-range"
+            style={{
+              WebkitAppearance: "none",
+              background: `linear-gradient(90deg ,rgb(251 133 87) ${(numberSelector * 100) / 25}%, rgb(223, 223, 223), rgb(223, 223, 223), rgb(223, 223, 223) `,
+            }}
+            type="range"
+            value={numberSelector}
+            min="1"
+            max="25"
+            onChange={(e) => setNumberSelector(e.target.value)}
+          />
+          <button
+            className="nxt-btn"
+            type="button"
+            onClick={() =>
+              navigate(`/difficultiespage/${id}/${numberSelector}`)
+            }
+          >
+            Next page
+          </button>
+        </section>
+      </div>
     </>
   );
 }

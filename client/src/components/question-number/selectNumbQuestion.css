@@ -1,0 +1,74 @@
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.number-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 2rem;
+}
+
+.questions {
+  font-size: 30px;
+  margin: 10px;
+}
+
+.input-range {
+  height: 15px;
+  width: 60%;
+  outline: none;
+  transition: opacity 0.2s;
+  border-radius: 12px;
+}
+
+.input-range-color-orange {
+  background: rgb(251 133 87);
+}
+
+.input-range-color-white {
+  background: rgb(223, 223, 223);
+}
+
+.input-range:hover {
+  opacity: 1;
+}
+
+.input-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(235, 218, 218);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nxt-btn {
+  background-color: rgb(251 133 87);
+}
+
+@media (min-width: 900px) {
+  .title {
+    margin: 0px 0px 50px 0px;
+    font-size: 40px;
+  }
+
+  .input-range {
+    width: 90%;
+  }
+
+  .questions {
+    margin: 0;
+  }
+
+  .nxt-btn {
+    margin: 40px 32px 32px 32px;
+  }
+}
