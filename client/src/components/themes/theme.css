@@ -127,7 +127,7 @@ img {
 }
 
 .sports {
-  background: linear-gradient(#ffdfc0, #ffcfa8);
+  background: linear-gradient(#ffdfc0, #f3bf9b);
   color: #c99c54;
 }
 
@@ -184,7 +184,7 @@ body {
 @media (min-width: 500px) {
   .theme-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(10, 1fr);
     gap: 40px;
     margin: 1rem 3rem;
