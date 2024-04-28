@@ -1,5 +1,6 @@
-import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import { useUsername } from "../../contexts/UsernameContext";
 import "./header.css";
 import Home from "../../assets/icons/home white.png";
 import "../colors/colors.css";
@@ -63,8 +64,11 @@ function Header({ id }) {
     nameQuizzes = "Art";
   }
   const navigate = useNavigate();
+  const {userAvatar} = useUsername()
+
   return (
     <header className={buttonClass}>
+      {userAvatar === "" ? null : <img src = {userAvatar}  id="logo-header-page" alt="logo Brainbox" /> }
       <h1>{nameQuizzes}</h1>
       <div className="btn">
         <img

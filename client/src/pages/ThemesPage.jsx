@@ -3,12 +3,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "../components/themes/theme.css";
 import Theme from "../components/themes/theme";
-import Logo from "../assets/logo/brainbox.png";
 import SearchBar from "../components/SearchBar/searchbar";
+import { useUsername } from "../contexts/UsernameContext";
+import Logo from "../assets/logo/brainbox.png"
 
 function ThemesPage() {
   const [themes, setThemes] = useState([]);
   const [tabFilterTheme, setTabFilterTheme] = useState(themes);
+  const {username} = useUsername()
+  const {userAvatar} = useUsername()
 
   const GetThemes = () => {
     axios.get("https://opentdb.com/api_category.php").then((response) => {
@@ -47,11 +50,10 @@ function ThemesPage() {
     <>
       <div className="hello-ready-logo">
         <div className="hello-ready">
-          <h1>Hello Brain Boxer!</h1>
+          {username === "" ? <h1>Hello Brain Boxer !</h1> : <h1>Hello {username}!</h1>}
           <h2>Ready for a quizz?</h2>
         </div>
-        <img src={Logo} id="logo-theme-page" alt="logo Brainbox" />
-      </div>
+        {userAvatar === "" ? <img src= {Logo}  id="logo-theme-page" alt="logo avatar" /> : <img src = {userAvatar}  id="logo-theme-page" alt="logo Brainbox" /> }      </div>
       <SearchBar handleSearch={handleSearch} />
       <h1 id="explore">Explore by themes</h1>
       <div className="theme-cards">

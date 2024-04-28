@@ -1,5 +1,6 @@
-import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import { useUsername } from "../../contexts/UsernameContext";
 import "./Score.css";
 import stupid from "../../assets/icons/stupid.jpg";
 import congratulation from "../../assets/icons/congratulation.jpg";
@@ -9,6 +10,7 @@ import Confettis from "./Confettis";
 import background from "../../assets/background/background.png";
 
 function Score({ correctAnswers, totalAnswers }) {
+  const {username, userAvatar} = useUsername()
   let message;
   let image = ""
 
@@ -22,7 +24,6 @@ function Score({ correctAnswers, totalAnswers }) {
     message = "Ask ChatGPT next time...";
     image = memeGirl;
   } else if (correctAnswers >= 0) {
-    message = "Patrick? Is that you?";
     image = stupid;
   }
 
@@ -32,6 +33,10 @@ function Score({ correctAnswers, totalAnswers }) {
     <div className="container" style={{ backgroundImage: `url(${background})` }}>
       <div className="confettis">
         <Confettis />
+      </div>
+      <div className="avatar-title">
+        <img src={userAvatar} className="avatar-logo" alt="avatar-logo"/>
+        {username === "" ? <h1>Your score is: </h1> : <h1 className="username-title">{username}! Your score is:  </h1>}
       </div>
       <h1 className="title-scores">
         {correctAnswers}/{totalAnswers}

@@ -13,9 +13,8 @@ function HomePage() {
     >
       <img src={logo} className="logo" alt="Brain Box Logo" />
       <p className="font-style">Enter the world of Brain Box</p>
-      <button type="button" className="start-button" onClick={() => navigate("/themespage")}>Let's Go !</button>
+      <button type="button" className="start-button" onClick={() => navigate("/avatarpage")}>Let's Go !</button>
     </div>
-  
   );
 }
 

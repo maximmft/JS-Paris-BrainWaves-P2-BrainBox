@@ -23,6 +23,21 @@ header h1 {
   top: 8px;
   right: 10px;
 }
+.avatar-header {
+  width: 40px;
+  height: 2.5rem;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+#logo-header-page {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
 
 @media (min-width: 500px) {
   .home-btn {
