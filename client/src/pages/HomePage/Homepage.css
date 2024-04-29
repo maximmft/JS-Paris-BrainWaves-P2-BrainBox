@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Solway:wght@300;400;500;700;800&display=swap");
+
+.home-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+.font-style {
+  font-family: solway;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: black;
+  text-align: center;
+  margin: 0px 3px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.start-button {
+  font-family: "Itim", cursive;
+  font-size: 2rem;
+  cursor: pointer;
+  background: linear-gradient(rgb(251 133 87), rgb(210 115 77));
+  color: white;
+  border-radius: 2rem;
+  margin-top: 4rem;
+  box-shadow: 0px 4px 5px 1px rgba(157, 157, 157, 0.85);
+  animation: growAndShrink 2.5s infinite;
+}
+
+@keyframes growAndShrink {
+  0% {
+    width: 45%;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+  50% {
+    width: 50%;
+    height: 4.5rem;
+    font-size: 1.7rem;
+  }
+  100% {
+    width: 45%;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .font-style {
+    font-size: 2.5rem;
+    font-family: solway;
+    font-weight: 600;
+  }
+
+  .logo {
+    width: 30%;
+  }
+
+  .start-button {
+    width: 20%;
+    height: 4rem;
+    animation: growAndShrink 2.5s infinite;
+  }
+
+  @keyframes growAndShrink {
+    0% {
+      width: 20%;
+      height: 4rem;
+      font-size: 2rem;
+    }
+    50% {
+      width: 22%;
+      height: 4.5rem;
+      font-size: 2.2rem;
+    }
+    100% {
+      width: 20%;
+      height: 4rem;
+      font-size: 2rem;
+    }
+  }
+}

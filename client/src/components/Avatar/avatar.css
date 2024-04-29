@@ -1,0 +1,91 @@
+.avatar-section {
+  background-position: top;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-title {
+  font-size: 1.7rem;
+  margin: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.username-button {
+  background: linear-gradient(rgb(251 133 87), rgb(210 115 77));
+  height: 10px;
+  width: 200px;
+  font-size: medium;
+}
+
+.username-button:hover {
+  transform: scale(1.1);
+}
+
+input {
+  background-color: transparent;
+  font-family: itim;
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.image-avatar-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.images-avatar {
+  width: 5.5rem;
+  height: auto;
+  margin: 10px;
+  transition: 0.2s ease-in;
+  opacity: 0.7;
+}
+
+.images-avatar:hover {
+  transform: scale(1.2);
+  transition: 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.selected {
+  width: 6.5rem;
+  height: auto;
+  margin: 0;
+  opacity: 1;
+}
+
+@media (min-width: 500px) {
+  .avatar-title {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  .images-avatar {
+    width: 6rem;
+    height: auto;
+    margin: 10px;
+  }
+
+  .image-avatar-display {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 10rem;
+  }
+  .username-button {
+    width: 260px;
+    font-size: 1.3rem;
+    padding: 2.5rem;
+  }
+  .selected {
+    width: 7.5rem;
+    height: auto;
+    margin: 0;
+  }
+}

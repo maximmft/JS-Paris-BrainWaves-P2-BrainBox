@@ -1,0 +1,89 @@
+.books-background {
+  background: linear-gradient(#ffdccd, #e1ab91);
+  color: white;
+}
+
+.television-background {
+  background: linear-gradient(#d7cef8, #d19aea);
+  color: white;
+}
+
+.board-games-background {
+  background: linear-gradient(#7ec3ae, #dbe8aa);
+  color: white;
+}
+
+.celebrities-background {
+  background: linear-gradient(#f9f99e, #d589b8);
+  color: white;
+}
+
+.vehicles-background {
+  background: linear-gradient(#b6b4e5, #8e8d8d);
+  color: white;
+}
+
+.comics-background {
+  background: linear-gradient(#dffaa9, #669a92);
+  color: white;
+}
+
+.nature-background {
+  background: linear-gradient(#54925d, #3f7249);
+  color: white;
+}
+
+.history-background {
+  background: linear-gradient(#c2384a, #9c2434);
+  color: white;
+}
+
+.sports-background {
+  background: linear-gradient(#ffb771, #b68b55);
+  color: white;
+}
+
+.geography-background {
+  background: linear-gradient(#3e81b9, rgb(141, 141, 201));
+  color: white;
+}
+
+.art-background {
+  background: linear-gradient(#f364ff, #8b43a5);
+  color: white;
+}
+
+.music-background {
+  background: linear-gradient(#ff4fb3, #c2368a);
+  color: white;
+}
+
+.all-background {
+  background: linear-gradient(#d194e7, #f581b9, #f4c984, #7fd091);
+  color: white;
+}
+
+.mythology-background {
+  background: linear-gradient(#e67474, #d476f6);
+  color: white;
+}
+
+.film-background {
+  background: linear-gradient(#cbcbcb, rgb(144, 144, 144));
+  color: white;
+}
+
+.video-games-background {
+  background: linear-gradient(#f99d9d, rgb(168, 171, 253));
+  color: white;
+}
+
+.manga-background {
+  background: linear-gradient(#e899cc, rgb(197, 197, 197));
+  color: rgb(255, 255, 255);
+}
+
+.animals-background {
+  background: linear-gradient(#c99c54, rgb(225, 173, 135));
+  color: white;
+}
