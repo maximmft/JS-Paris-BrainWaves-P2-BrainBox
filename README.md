@@ -1,7 +1,27 @@
 # JS-Paris-BrainWaves-P2-QuizzAddict
 
-This project uses Harmonia. Harmonia is a framework meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying a pedagogical tool.
+This project was produced as our second assignment for the Wild Code School's coding bootcamp.
+
+This is a quiz application using React(Javascript, HTML, CSS) and an quizz API.
+
+This application provide a selection of different quiz questions on different topics and collect user data to determine whether the answers to a question are correct or incorrect.
+
+Then we generate a score and append a final page of results from the user data.
+
+# Quizz Features :
+
+- A button in the home page that allows us to access the application
+- Selection of your avatar on a selection of different images.
+- An input where the user can communicate his username
+- A selection of different topics
+- An input range to choose how many questions the user wants (from 5 to 25 questions for each round)
+- Multiple Question Types: Support for various question types, including multiple choice, true/false.
+- A 10 seconds timer on each question
+- A Summary of how many questions answered correctly
+- Go back button travels to the topics selection page of the quiz
+- Responsive Design: Ensure the application is optimized for use on different devices, including desktops and smartphones.
+
+Used API : https://opentdb.com/api_config.php
 
 ## Setup & Use
 
