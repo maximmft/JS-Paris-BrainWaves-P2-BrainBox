@@ -1,3 +1,45 @@
+.line-hr-books {
+  color: #603420;
+  border: 0;
+  border-bottom: 1.5px dashed #603420;
+  width: 288px;
+  margin-top: 20px;
+}
+.line-hr-television {
+  color: #634272;
+  border: 0;
+  border-bottom: 1.5px dashed #634272;
+  width: 288px;
+  margin-top: 20px;
+}
+.line-hr-board {
+  color: #44675c;
+  border: 0;
+  border-bottom: 1.5px dashed #44675c;
+  width: 288px;
+  margin-top: 20px;
+}
+.line-hr-celebrities {
+  color: #8a752a;
+  border: 0;
+  border-bottom: 1.5px dashed #8a752a;
+  width: 288px;
+  margin-top: 20px;
+}
+.line-hr-vehicles {
+  color: #2e2e2e;
+  border: 0;
+  border-bottom: 1.5px dashed #2e2e2e;
+  width: 288px;
+  margin-top: 20px;
+}
+.line-hr-comics {
+  color: #446e68;
+  border: 0;
+  border-bottom: 1.5px dashed #446e68;
+  width: 288px;
+  margin-top: 20px;
+}
 .line-hr-nature {
   color: green;
   border: 0;
@@ -93,9 +135,92 @@
   width: 288px;
   margin-top: 20px;
 }
-
 .nature-answers {
   background-color: #54925d;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+.books-answers {
+  background-color: #ce977e;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+.television-answers {
+  background-color: #d19aea;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+.board-games-answers {
+  background-color: #c0cc8f;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+.celebrities-answers {
+  background-color: #c3ae64;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+.vehicles-answers {
+  background-color: #8e8d8d;
+  font-family: Itim;
+  font-size: large;
+  flex-wrap: wrap;
+  width: 10rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0.5rem;
+  box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.47);
+  border-radius: 20px;
+  border: none;
+  color: white;
+}
+.comics-answers {
+  background-color: #6da49c;
   font-family: Itim;
   font-size: large;
   flex-wrap: wrap;

@@ -1,16 +1,18 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./GameInterface.css";
 import PropTypes from "prop-types";
 import CardQuestion from "../card-question/CardQuestion";
 import Header from "../Header/Header";
 
 function GameInterface({ background, id, difficulty }) {
+  const { numberSelector } = useParams();
   const [quizzes, setQuizzes] = useState([]);
   const getQuizz = () => {
     axios
       .get(
-        `https://opentdb.com/api.php?amount=10&category=${id}&difficulty=${difficulty}`
+        `https://opentdb.com/api.php?amount=${numberSelector}&category=${id}&difficulty=${difficulty}`
       )
       .then((response) => {
         const results = [];

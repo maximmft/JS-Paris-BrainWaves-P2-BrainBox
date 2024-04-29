@@ -1,10 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./difficulties.css";
 import "../colors/colors.css";
 import Background from "../../assets/background/background.png";
 
 function Difficulties({ id }) {
+  const { numberSelector } = useParams();
+
   let buttonClass = "";
   if (id === "9") {
     buttonClass = "all-background";
@@ -28,7 +30,19 @@ function Difficulties({ id }) {
     buttonClass = "geography-background";
   } else if (id === "23") {
     buttonClass = "history-background";
-  } else {
+  } else if (id === "10") {
+    buttonClass = "books-background";
+  } else if (id === "14") {
+    buttonClass = "television-background";
+  } else if (id === "16") {
+    buttonClass = "board-games-background";
+  } else if (id === "26") {
+    buttonClass = "celebrities-background";
+  } else if (id === "29") {
+    buttonClass = "comics-background";
+  } else if (id === "28") {
+    buttonClass = "vehicles-background";}
+    else {
     buttonClass = "art-background";
   }
 
@@ -44,21 +58,27 @@ function Difficulties({ id }) {
         <button
           type="button"
           className={buttonClass}
-          onClick={() => navigate(`/difficultiespage/${id}/easy`)}
+          onClick={() =>
+            navigate(`/difficultiespage/${id}/${numberSelector}/easy`)
+          }
         >
           Easy
         </button>
         <button
           type="button"
           className={buttonClass}
-          onClick={() => navigate(`/difficultiespage/${id}/medium`)}
+          onClick={() =>
+            navigate(`/difficultiespage/${id}/${numberSelector}/medium`)
+          }
         >
           Medium
         </button>
         <button
           type="button"
           className={buttonClass}
-          onClick={() => navigate(`/difficultiespage/${id}/hard`)}
+          onClick={() =>
+            navigate(`/difficultiespage/${id}/${numberSelector}/hard`)
+          }
         >
           Hard
         </button>

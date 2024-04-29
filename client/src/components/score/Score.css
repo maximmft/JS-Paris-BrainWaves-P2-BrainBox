@@ -99,22 +99,42 @@
 }
 
 .title-scores {
-  font-size: 10vh;
+  font-size: 9vh;
   margin-bottom: 20px;
-  font-weight: 400;
   color: #5f5642;
   margin-left: 0;
+  margin-top: 0;
 }
 
 .mini-titles-scores {
-  font-size: 2rem;
-  margin-top: 2rem;
+  font-size: 20px;
+  margin-top: 0.5rem;
   color: #443a23;
+}
+
+.username-title {
+  margin: 0;
+  font-size: 2rem;
 }
 
 img.score {
   width: 80%;
   height: auto;
+  border-radius: 40px;
+}
+
+.avatar-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-logo {
+  height: auto;
+  width: 4rem;
+  position: absolute;
+  top: 6px;
+  left: 2px;
 }
 
 .homebtn {
@@ -136,5 +156,12 @@ img.score {
   img.score {
     width: 25%;
     height: auto;
+  }
+  .avatar-logo {
+    height: auto;
+    width: 6rem;
+  }
+  .title-scores {
+    margin-left: 0;
   }
 }

@@ -1,5 +1,6 @@
-import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import { useUsername } from "../../contexts/UsernameContext";
 import "./header.css";
 import Home from "../../assets/icons/home white.png";
 import "../colors/colors.css";
@@ -40,13 +41,34 @@ function Header({ id }) {
   } else if (id === "23") {
     buttonClass = "history-background";
     nameQuizzes = "History";
+  } else if (id === "10") {
+    buttonClass = "books-background";
+    nameQuizzes = "Books";
+  } else if (id === "14") {
+    buttonClass = "television-background";
+    nameQuizzes = "Television";
+  } else if (id === "16") {
+    buttonClass = "board-games-background";
+    nameQuizzes = "Board Games";
+  } else if (id === "26") {
+    buttonClass = "celebrities-background";
+    nameQuizzes = "Celebrities";
+  } else if (id === "28") {
+    buttonClass = "vehicles-background";
+    nameQuizzes = "Vehicles";
+  } else if (id === "29") {
+    buttonClass = "comics-background";
+    nameQuizzes = "Comics";
   } else {
     buttonClass = "art-background";
     nameQuizzes = "Art";
   }
   const navigate = useNavigate();
+  const {userAvatar} = useUsername()
+
   return (
     <header className={buttonClass}>
+      {userAvatar === "" ? null : <img src = {userAvatar}  id="logo-header-page" alt="logo Brainbox" /> }
       <h1>{nameQuizzes}</h1>
       <div className="btn">
         <img
