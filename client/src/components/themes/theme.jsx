@@ -8,7 +8,7 @@ function Theme({ name, id }) {
 
   const handleClick = () => {
     navigate(`/numberquestions/${id}`);
-    window.scrollTo(0, 0); // Scroll to the top of the window
+    window.scrollTo(0, 0); 
   };
 
   return (

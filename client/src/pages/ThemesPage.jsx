@@ -37,7 +37,7 @@ function ThemesPage() {
   const handleSearch = (event) => {
     event.preventDefault();
     const filter = themes.filter((theme) =>
-      theme.name.toLowerCase().includes(event.target.value)
+      theme.name.toLowerCase().includes(event.target.value.toLowerCase())
     );
     if (filter.length !== 0) {
       setTabFilterTheme(filter);
