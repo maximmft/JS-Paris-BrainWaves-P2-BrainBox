@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import "../colors/colors.css";
 
 function Timer({ time, setTime, anim, setAnim }) {
- 
   useEffect(() => {
     if (time !== 0) {
       const interval = setInterval(() => {
@@ -19,7 +18,7 @@ function Timer({ time, setTime, anim, setAnim }) {
     }
 
     return () => {};
-  },[time]);
+  }, [time]);
 
   return (
     <>

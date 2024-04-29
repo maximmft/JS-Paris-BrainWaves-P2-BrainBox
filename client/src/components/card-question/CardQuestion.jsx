@@ -1,43 +1,26 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import "./CardQuestion.css";
 import "./answers.css";
 import PropTypes from "prop-types";
 import Timer from "./Timer";
-
-import Geography from "../../assets/icons/geography.png";
-import History from "../../assets/icons/history.png";
-import Art from "../../assets/icons/art.png";
-import Music from "../../assets/icons/music.png";
-import Mythology from "../../assets/icons/mythology.png";
-import Nature from "../../assets/icons/nature.png";
-import Sports from "../../assets/icons/sports.png";
-import Animals from "../../assets/icons/animals.png";
-import Film from "../../assets/icons/film.png";
-import Videogames from "../../assets/icons/video-games.png";
-import Manga from "../../assets/icons/manga.png";
-import All from "../../assets/icons/all.png";
-import Board from "../../assets/icons/board.png";
-import Books from "../../assets/icons/books.png";
-import Celebrities from "../../assets/icons/celebrities.png";
-import Comics from "../../assets/icons/comics.png";
-import Television from "../../assets/icons/television.png";
-import Vehicle from "../../assets/icons/vehicle.png";
-
+import Icons from "../../assets";
 
 function CardQuestion({ quizzes, id }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [time, setTime] = useState(12);
   const [anim, setAnim] = useState("animated");
   const [buttonDisabled, setButtonDisabled] = useState(false);
-
+  const { numberSelector } = useParams();
   const navigate = useNavigate();
 
   const handlePageClick = (setClickAnswer, goodAnswers) => {
     setTime(12);
     setAnim("animated");
-    if (currentPage >= 10) {
-      navigate("/scorespage", { state: { good: goodAnswers } });
+    if (currentPage >= numberSelector) {
+      navigate(`/scorespage/${id}/${numberSelector}`, {
+        state: { good: goodAnswers },
+      });
     }
     setCurrentPage(currentPage + 1);
     setClickAnswer("");
@@ -94,24 +77,24 @@ function CardQuestion({ quizzes, id }) {
   }
 
   const icons = () => {
-    if (id === "9") return All;
-    if (id === "12") return Music;
-    if (id === "15") return Videogames;
-    if (id === "31") return Manga;
-    if (id === "11") return Film;
-    if (id === "27") return Animals;
-    if (id === "17") return Nature;
-    if (id === "20") return Mythology;
-    if (id === "21") return Sports;
-    if (id === "22") return Geography;
-    if (id === "23") return History;
-    if (id === "25") return Art;
-    if (id === "10") return Books;
-    if (id === "14") return Television;
-    if (id === "16") return Board;
-    if (id === "26") return Celebrities;
-    if (id === "28") return Vehicle;
-    if (id === "29") return Comics;
+    if (id === "9") return Icons.All;
+    if (id === "12") return Icons.Music;
+    if (id === "15") return Icons.Videogames;
+    if (id === "31") return Icons.Manga;
+    if (id === "11") return Icons.Film;
+    if (id === "27") return Icons.Animals;
+    if (id === "17") return Icons.Nature;
+    if (id === "20") return Icons.Mythology;
+    if (id === "21") return Icons.Sports;
+    if (id === "22") return Icons.Geography;
+    if (id === "23") return Icons.History;
+    if (id === "25") return Icons.Art;
+    if (id === "10") return Icons.Books;
+    if (id === "14") return Icons.Television;
+    if (id === "16") return Icons.Board;
+    if (id === "26") return Icons.Celebrities;
+    if (id === "28") return Icons.Vehicle;
+    if (id === "29") return Icons.Comics;
 
     return null;
   };
@@ -174,7 +157,7 @@ function CardQuestion({ quizzes, id }) {
 
   const [questionCount, setQuestionCount] = useState(1);
   function questionCounter() {
-    if (questionCount <= 9) setQuestionCount(questionCount + 1);
+    if (questionCount <= numberSelector) setQuestionCount(questionCount + 1);
   }
 
   function handleAnswer(answer, correctAnswer) {
@@ -207,7 +190,11 @@ function CardQuestion({ quizzes, id }) {
                 .replace(/&shy;/g, "")
                 .replace(/&ldquo;/g, "'")
                 .replace(/&rdquo;/g, "'")
-                .replace(/&rsquo;/g, "’")}
+                .replace(/&rsquo;/g, "’")
+                .replace(/&iacute;/g, "í")
+                .replace(/&eacute/g, "é")
+                .replace(/&ndash;/g, "-")
+                .replace(/&amp;/g, "&")}
             </p>
             <hr className={hrClass} />
           </div>
@@ -236,7 +223,7 @@ function CardQuestion({ quizzes, id }) {
                   .replace(/&iacute;/g, "í")
                   .replace(/&eacute/g, "é")
                   .replace(/&ndash;/g, "-")
-                  }
+                  .replace(/&amp;/g, "&")}
               </button>
             ))}
           </section>
@@ -252,7 +239,9 @@ function CardQuestion({ quizzes, id }) {
       >
         Next Question
       </button>
-      <p className="question-counter">Question {questionCount}/10</p>
+      <p className="question-counter">
+        Question {questionCount}/{numberSelector}
+      </p>
     </section>
   );
 }

@@ -161,4 +161,7 @@ img.score {
     height: auto;
     width: 6rem;
   }
+  .title-scores {
+    margin-left: 0;
+  }
 }
