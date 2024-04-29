@@ -9,20 +9,20 @@ import Confettis from "./Confettis";
 import background from "../../assets/background/background.png";
 
 function Score({ correctAnswers, totalAnswers }) {
-  // const {numberSelector} = useParams();
+  const percentage = ((correctAnswers / totalAnswers) * 100).toFixed(2);
   let message;
-  let image = ""
+  let image = "";
 
-  if (correctAnswers === 10) {
+  if (percentage >= 90) {
     message = "Homer is proud of you !!";
     image = congratulation;
-  } else if (correctAnswers >= 7) {
+  } else if (percentage >= 60) {
     message = "Almost !";
     image = memeMath;
-  } else if (correctAnswers >= 4) {
+  } else if (percentage >= 30) {
     message = "Ask ChatGPT next time...";
     image = memeGirl;
-  } else if (correctAnswers >= 0) {
+  } else if (percentage >= 0) {
     message = "Patrick? Is that you?";
     image = stupid;
   }
@@ -30,7 +30,10 @@ function Score({ correctAnswers, totalAnswers }) {
   const navigate = useNavigate();
 
   return (
-    <div className="container" style={{ backgroundImage: `url(${background})` }}>
+    <div
+      className="container"
+      style={{ backgroundImage: `url(${background})` }}
+    >
       <div className="confettis">
         <Confettis />
       </div>

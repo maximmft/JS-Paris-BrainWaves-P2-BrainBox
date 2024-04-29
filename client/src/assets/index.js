@@ -12,16 +12,16 @@ import Manga from "./icons/manga.png";
 import All from "./icons/all.png";
 
 export default {
-    All,
-    Art,
-    Film,
-    Manga,
-    Music,
-    Sports,
-    Nature,
-    Animals,
-    History,
-    Geography,
-    Mythology,
-    Videogames
-} 
+  All,
+  Art,
+  Film,
+  Manga,
+  Music,
+  Sports,
+  Nature,
+  Animals,
+  History,
+  Geography,
+  Mythology,
+  Videogames,
+};

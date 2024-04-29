@@ -7,7 +7,7 @@ import Header from "../Header/Header";
 function SelectNumbQuestion() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [numberSelector, setNumberSelector] = useState(0);
+  const [numberSelector, setNumberSelector] = useState(5);
 
   return (
     <>
@@ -27,7 +27,7 @@ function SelectNumbQuestion() {
             }}
             type="range"
             value={numberSelector}
-            min="1"
+            min="5"
             max="25"
             onChange={(e) => setNumberSelector(e.target.value)}
           />

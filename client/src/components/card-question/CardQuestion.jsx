@@ -5,7 +5,7 @@ import "./answers.css";
 import PropTypes from "prop-types";
 import Timer from "./Timer";
 
-import Icons from '../../assets'
+import Icons from "../../assets";
 
 function CardQuestion({ quizzes, id }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,7 +19,9 @@ function CardQuestion({ quizzes, id }) {
     setTime(12);
     setAnim("animated");
     if (currentPage >= numberSelector) {
-      navigate("/scorespage", { state: { good: goodAnswers } });
+      navigate(`/scorespage/${id}/${numberSelector}`, {
+        state: { good: goodAnswers },
+      });
     }
     setCurrentPage(currentPage + 1);
     setClickAnswer("");
@@ -79,7 +81,7 @@ function CardQuestion({ quizzes, id }) {
 
     return null;
   };
-  
+
   let buttonClass = "";
   if (id === "9") {
     buttonClass = "all-answers";
@@ -159,7 +161,11 @@ function CardQuestion({ quizzes, id }) {
                 .replace(/&shy;/g, "")
                 .replace(/&ldquo;/g, "'")
                 .replace(/&rdquo;/g, "'")
-                .replace(/&rsquo;/g, "’")}
+                .replace(/&rsquo;/g, "’")
+                .replace(/&iacute;/g, "í")
+                .replace(/&eacute/g, "é")
+                .replace(/&ndash;/g, "-")
+                .replace(/&amp;/g, "&")}
             </p>
             <hr className={hrClass} />
           </div>

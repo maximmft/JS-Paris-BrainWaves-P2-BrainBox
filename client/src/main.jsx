@@ -7,7 +7,7 @@ import QuizzPage from "./pages/QuizzPage";
 import ScoresPage from "./pages/ScoresPage";
 import DifficultiesPage from "./pages/DifficultiesPage";
 import HomePage from "./pages/HomePage/HomePage";
-import NumberQuestions from './pages/NumberQuestions'
+import NumberQuestions from "./pages/NumberQuestions";
 
 const router = createBrowserRouter([
   {
@@ -16,14 +16,19 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/themespage", element: <ThemesPage /> },
-      { path: "/numberquestions/:id", element: <NumberQuestions />},
-      { path: "/difficultiespage/:id/:numberSelector", element: <DifficultiesPage /> },
-      { path: "/difficultiespage/:id/:numberSelector/:difficulty", element: <QuizzPage /> },
-      { path: "/scorespage", element: <ScoresPage /> },
+      { path: "/numberquestions/:id", element: <NumberQuestions /> },
+      {
+        path: "/difficultiespage/:id/:numberSelector",
+        element: <DifficultiesPage />,
+      },
+      {
+        path: "/difficultiespage/:id/:numberSelector/:difficulty",
+        element: <QuizzPage />,
+      },
+      { path: "/scorespage/:id/:numberSelector", element: <ScoresPage /> },
     ],
   },
 ]);
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

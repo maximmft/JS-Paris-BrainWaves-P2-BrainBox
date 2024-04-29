@@ -1,12 +1,13 @@
-import { useLocation } from "react-router-dom";
-import Score from "../components/score/Score"
+import { useLocation, useParams } from "react-router-dom";
+import Score from "../components/score/Score";
 
-function ScoresPage () {
-    
-    const location = useLocation();
+function ScoresPage() {
+  const { numberSelector } = useParams();
+  const location = useLocation();
 
-
-    return ( <Score correctAnswers={location.state.good} totalAnswers={10}/> )
+  return (
+    <Score correctAnswers={location.state.good} totalAnswers={numberSelector} />
+  );
 }
 
-export default ScoresPage
+export default ScoresPage;
